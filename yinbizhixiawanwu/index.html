@@ -1,0 +1,1775 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>荫蔽 - 自然遮蔽影像社区 - 在树影之下记录真实生活</title>
+<meta name="description" content="荫蔽是专注自然遮蔽生活的视频品牌官网，用影像记录树影、山野与人心的温度，为创作者搭建高品质内容生态。">
+<style>
+:root{
+  --green:#2f5d3a;
+  --green-dark:#1c3b26;
+  --moss:#6b8f5e;
+  --earth:#a8825c;
+  --sand:#e8dfd0;
+  --cream:#f5f1e8;
+  --ink:#25302a;
+  --muted:#6d7a70;
+  --accent:#d9a94c;
+  --shadow:0 10px 30px rgba(28,59,38,.12);
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:112px;}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:15px;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+.sticky-wrap{position:sticky;top:0;z-index:100;}
+/* 公告条 */
+.announce{
+  background:linear-gradient(90deg,var(--green-dark),var(--green));
+  color:#eef4ea;
+  font-size:13px;
+  padding:9px 20px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:center;
+  overflow:hidden;
+}
+.announce .tag{
+  background:var(--accent);
+  color:#2b2210;
+  font-weight:700;
+  padding:1px 9px;
+  border-radius:20px;
+  font-size:12px;
+  flex-shrink:0;
+}
+.announce .txt{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.announce .txt b{color:#f6e3b4;}
+/* 页头 */
+header.site-head{
+  background:rgba(245,241,232,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(47,93,58,.15);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 28px;
+  gap:18px;
+  flex-wrap:wrap;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  font-size:21px;
+  letter-spacing:3px;
+  color:var(--green-dark);
+}
+.logo .mark{
+  width:34px;height:34px;
+  border-radius:50% 50% 50% 6px;
+  background:conic-gradient(from 45deg,var(--green),var(--moss),var(--accent),var(--green));
+  display:inline-block;
+  box-shadow:inset 0 0 0 4px var(--cream);
+}
+.logo small{
+  display:block;
+  font-size:10px;
+  letter-spacing:2px;
+  color:var(--muted);
+  font-weight:500;
+  line-height:1;
+}
+nav.main-nav{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+nav.main-nav a{
+  padding:7px 13px;
+  border-radius:20px;
+  font-size:14px;
+  color:#3b4a40;
+  transition:.25s;
+}
+nav.main-nav a:hover{background:rgba(47,93,58,.1);color:var(--green-dark);}
+.head-tools{display:flex;align-items:center;gap:10px;}
+.search-box{
+  display:flex;align-items:center;
+  background:#fff;
+  border:1px solid rgba(47,93,58,.25);
+  border-radius:22px;
+  padding:5px 6px 5px 14px;
+  width:230px;
+  transition:.3s;
+}
+.search-box:focus-within{box-shadow:0 0 0 3px rgba(107,143,94,.25);}
+.search-box input{
+  border:none;outline:none;background:none;
+  font-size:13px;width:100%;color:var(--ink);
+}
+.search-box button{
+  background:var(--green);
+  color:#fff;
+  border-radius:16px;
+  padding:4px 12px;
+  font-size:12px;
+}
+.menu-toggle{display:none;font-size:22px;color:var(--green-dark);padding:4px 8px;}
+.search-feedback{
+  position:absolute;
+  right:28px;
+  top:100%;
+  margin-top:6px;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  padding:10px 16px;
+  font-size:13px;
+  color:var(--green-dark);
+  display:none;
+  z-index:120;
+  max-width:300px;
+}
+/* HERO */
+.hero{
+  position:relative;
+  padding:60px 28px 50px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:44px;
+  align-items:center;
+  max-width:1240px;
+  margin:0 auto;
+}
+.hero .eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(47,93,58,.1);
+  color:var(--green-dark);
+  font-size:12.5px;
+  padding:5px 14px;
+  border-radius:20px;
+  letter-spacing:1px;
+  margin-bottom:18px;
+}
+.hero .eyebrow::before{content:"◈";color:var(--accent);}
+.hero h1{
+  font-size:clamp(38px,5.2vw,60px);
+  line-height:1.15;
+  letter-spacing:2px;
+  color:var(--green-dark);
+  font-weight:800;
+}
+.hero h1 em{
+  font-style:normal;
+  color:var(--moss);
+  position:relative;
+  display:inline-block;
+}
+.hero h1 em::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:4px;
+  height:10px;
+  background:rgba(217,169,76,.35);
+  border-radius:4px;
+  z-index:-1;
+}
+.hero .slogan{
+  margin-top:14px;
+  font-size:17px;
+  color:var(--earth);
+  letter-spacing:1px;
+  font-weight:600;
+}
+.hero .intro{
+  margin-top:18px;
+  color:#4a574d;
+  font-size:14.5px;
+  max-width:560px;
+  text-align:justify;
+}
+.hero-btns{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap;}
+.btn{
+  padding:11px 26px;
+  border-radius:26px;
+  font-size:14.5px;
+  font-weight:600;
+  transition:.3s;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+}
+.btn-primary{background:var(--green);color:#fff;box-shadow:0 8px 20px rgba(47,93,58,.3);}
+.btn-primary:hover{background:var(--green-dark);transform:translateY(-2px);}
+.btn-ghost{border:1.5px solid var(--green);color:var(--green-dark);}
+.btn-ghost:hover{background:rgba(47,93,58,.08);}
+.hero-stats{
+  display:flex;
+  gap:30px;
+  margin-top:34px;
+  flex-wrap:wrap;
+}
+.hero-stats .stat b{
+  font-size:26px;
+  color:var(--green-dark);
+  font-weight:800;
+  letter-spacing:.5px;
+}
+.hero-stats .stat b span{font-size:14px;color:var(--moss);margin-left:2px;}
+.hero-stats .stat p{font-size:12.5px;color:var(--muted);margin-top:2px;}
+.hero-visual{
+  position:relative;
+}
+.hero-visual .main-img{
+  border-radius:24px 60px 24px 60px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transform:rotate(-1.2deg);
+}
+.hero-visual .float-card{
+  position:absolute;
+  bottom:-22px;
+  left:-18px;
+  background:#fff;
+  border-radius:14px;
+  padding:12px 18px;
+  box-shadow:var(--shadow);
+  font-size:13px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  transform:rotate(1deg);
+}
+.hero-visual .float-card .dot{
+  width:9px;height:9px;border-radius:50%;
+  background:#7cb86a;
+  box-shadow:0 0 0 4px rgba(124,184,106,.25);
+}
+.hero-visual .float-card b{color:var(--green-dark);}
+.hero-visual .leaf-deco{
+  position:absolute;
+  top:-26px;right:-16px;
+  width:80px;height:80px;
+  border-radius:50% 50% 6px 50%;
+  background:radial-gradient(circle at 30% 30%,var(--moss),var(--green));
+  opacity:.85;
+  transform:rotate(20deg);
+  z-index:-1;
+}
+/* 通用 section */
+section{padding:64px 28px;}
+.section-inner{max-width:1240px;margin:0 auto;}
+.sec-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:34px;
+  flex-wrap:wrap;
+}
+.sec-head .titles h2{
+  font-size:clamp(24px,3vw,32px);
+  color:var(--green-dark);
+  letter-spacing:1.5px;
+  font-weight:800;
+  position:relative;
+  display:inline-block;
+}
+.sec-head .titles h2::after{
+  content:"";
+  position:absolute;
+  left:0;bottom:-8px;
+  width:40px;height:4px;
+  border-radius:3px;
+  background:var(--accent);
+}
+.sec-head .titles p{
+  margin-top:16px;
+  font-size:13.5px;
+  color:var(--muted);
+  max-width:520px;
+}
+.sec-head .more{
+  font-size:13.5px;
+  color:var(--green);
+  border-bottom:1px dashed var(--moss);
+  padding-bottom:2px;
+}
+.sec-head .more:hover{color:var(--green-dark);}
+/* 焦点视频 */
+.featured-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:20px;
+}
+.vcard{
+  background:#fff;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 4px 16px rgba(28,59,38,.07);
+  transition:.35s;
+  display:flex;
+  flex-direction:column;
+}
+.vcard:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+.vcard .cover{
+  position:relative;
+  aspect-ratio:16/9;
+  overflow:hidden;
+}
+.vcard .cover img{width:100%;height:100%;object-fit:cover;transition:.5s;}
+.vcard:hover .cover img{transform:scale(1.05);}
+.vcard .cover .play{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg,rgba(28,59,38,0) 40%,rgba(28,59,38,.55));
+  opacity:0;
+  transition:.3s;
+}
+.vcard:hover .cover .play{opacity:1;}
+.vcard .cover .play span{
+  width:48px;height:48px;
+  border-radius:50%;
+  background:rgba(255,255,255,.92);
+  color:var(--green-dark);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;
+  padding-left:3px;
+}
+.vcard .cover .badge{
+  position:absolute;
+  top:10px;left:10px;
+  background:rgba(28,59,38,.82);
+  color:#eaf2e4;
+  font-size:11.5px;
+  padding:3px 10px;
+  border-radius:12px;
+  backdrop-filter:blur(4px);
+}
+.vcard .cover .dur{
+  position:absolute;
+  bottom:10px;right:10px;
+  background:rgba(0,0,0,.55);
+  color:#fff;
+  font-size:11px;
+  padding:2px 8px;
+  border-radius:8px;
+}
+.vcard .body{padding:15px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.vcard .body h3{font-size:15px;color:var(--ink);line-height:1.5;letter-spacing:.3px;}
+.vcard .body .desc{font-size:12.5px;color:var(--muted);flex:1;}
+.vcard .meta{
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:12px;color:var(--muted);margin-top:4px;gap:8px;
+}
+.vcard .meta .author{display:flex;align-items:center;gap:6px;}
+.avatar{
+  width:22px;height:22px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:11px;color:#fff;font-weight:700;flex-shrink:0;
+}
+.vcard .tags{display:flex;gap:6px;flex-wrap:wrap;}
+.vcard .tags span{
+  font-size:11px;color:var(--green);
+  background:rgba(47,93,58,.08);
+  padding:2px 8px;border-radius:10px;
+}
+.card-big{grid-row:span 2;}
+.card-big .cover{aspect-ratio:16/10;}
+.card-big .body h3{font-size:19px;}
+.card-big .body .desc{font-size:13px;}
+/* 专题 */
+.topic-band{
+  background:linear-gradient(160deg,#22432f,#2f5d3a 60%,#3d6f4b);
+  color:#e9f1e5;
+  border-radius:26px;
+  padding:44px 40px;
+  position:relative;
+  overflow:hidden;
+}
+.topic-band::before{
+  content:"";
+  position:absolute;
+  right:-80px;top:-80px;
+  width:300px;height:300px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(217,169,76,.22),transparent 70%);
+}
+.topic-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+  margin-top:28px;
+  position:relative;
+  z-index:1;
+}
+.topic-item{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;
+  padding:18px 18px 16px;
+  transition:.3s;
+  cursor:pointer;
+}
+.topic-item:hover{background:rgba(255,255,255,.14);transform:translateY(-3px);}
+.topic-item .no{
+  font-size:12px;
+  color:var(--accent);
+  letter-spacing:2px;
+  font-weight:700;
+}
+.topic-item h3{font-size:16px;margin:8px 0 8px;letter-spacing:.5px;}
+.topic-item p{font-size:12.5px;color:#c6d5c0;line-height:1.65;}
+.topic-item .st{
+  display:inline-block;
+  margin-top:12px;
+  font-size:11px;
+  background:rgba(217,169,76,.18);
+  color:#f0d9a0;
+  padding:2px 10px;
+  border-radius:10px;
+}
+/* 创作者 */
+.creator-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:20px;
+}
+.creator-card{
+  background:#fff;
+  border-radius:var(--radius);
+  padding:24px 20px 20px;
+  text-align:center;
+  box-shadow:0 4px 16px rgba(28,59,38,.07);
+  transition:.3s;
+  border-bottom:3px solid transparent;
+  cursor:pointer;
+}
+.creator-card:hover{
+  transform:translateY(-5px);
+  border-bottom-color:var(--accent);
+  box-shadow:var(--shadow);
+}
+.creator-card .big-avatar{
+  width:64px;height:64px;
+  border-radius:50%;
+  margin:0 auto 12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;font-weight:800;color:#fff;
+  box-shadow:0 6px 16px rgba(28,59,38,.18);
+}
+.creator-card h3{font-size:16px;color:var(--green-dark);}
+.creator-card .field{
+  font-size:12px;color:var(--earth);
+  margin:4px 0 10px;
+  letter-spacing:.5px;
+}
+.creator-card .bio{
+  font-size:12.5px;color:var(--muted);
+  line-height:1.6;
+  min-height:52px;
+}
+.creator-card .nums{
+  display:flex;justify-content:center;gap:22px;
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px dashed rgba(47,93,58,.15);
+}
+.creator-card .nums div b{font-size:15px;color:var(--green-dark);display:block;}
+.creator-card .nums div span{font-size:11px;color:var(--muted);}
+/* 影像墙 */
+.wall-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:120px;
+  gap:14px;
+}
+.wall-item{
+  border-radius:14px;
+  overflow:hidden;
+  position:relative;
+  cursor:pointer;
+}
+.wall-item img{width:100%;height:100%;object-fit:cover;transition:.5s;}
+.wall-item:hover img{transform:scale(1.06);}
+.wall-item .cap{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  padding:20px 12px 10px;
+  background:linear-gradient(transparent,rgba(20,40,26,.8));
+  color:#f0f4ec;
+  font-size:12.5px;
+  letter-spacing:.5px;
+}
+.wall-item.w2{grid-column:span 2;grid-row:span 2;}
+.wall-item.h2{grid-row:span 2;}
+/* 故事随笔 */
+.story-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:22px;
+}
+.story-card{
+  background:#fff;
+  border-radius:var(--radius);
+  padding:26px 24px;
+  box-shadow:0 4px 16px rgba(28,59,38,.06);
+  position:relative;
+  transition:.3s;
+}
+.story-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+.story-card::before{
+  content:"“";
+  position:absolute;
+  top:8px;left:18px;
+  font-size:52px;
+  color:rgba(107,143,94,.2);
+  font-family:Georgia,serif;
+  line-height:1;
+}
+.story-card .cat{
+  font-size:11.5px;color:var(--earth);
+  letter-spacing:1.5px;font-weight:600;
+}
+.story-card h3{font-size:17px;color:var(--green-dark);margin:8px 0 10px;letter-spacing:.3px;}
+.story-card p{font-size:13.5px;color:#55635a;line-height:1.8;text-align:justify;}
+.story-card .by{
+  margin-top:16px;padding-top:12px;
+  border-top:1px dashed rgba(47,93,58,.18);
+  font-size:12px;color:var(--muted);
+  display:flex;justify-content:space-between;
+}
+/* 评价 */
+.review-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+.review{
+  background:#fff;
+  border-radius:14px;
+  padding:18px 20px;
+  font-size:13.5px;
+  color:#4a574d;
+  box-shadow:0 3px 12px rgba(28,59,38,.06);
+  position:relative;
+  transition:.3s;
+}
+.review:hover{box-shadow:var(--shadow);}
+.review .stars{color:var(--accent);font-size:13px;letter-spacing:2px;margin-bottom:8px;}
+.review p{line-height:1.7;}
+.review .who{
+  margin-top:12px;
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;color:var(--muted);
+}
+.review .who b{color:var(--green-dark);font-weight:600;}
+/* 数据榜单 */
+.rank-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:22px;
+}
+.rank-card{
+  background:#fff;
+  border-radius:var(--radius);
+  padding:22px 22px 10px;
+  box-shadow:0 4px 16px rgba(28,59,38,.06);
+}
+.rank-card h3{
+  font-size:15px;
+  color:var(--green-dark);
+  display:flex;align-items:center;gap:8px;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(47,93,58,.12);
+}
+.rank-card h3 .ico{
+  width:24px;height:24px;border-radius:7px;
+  background:rgba(217,169,76,.22);
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:12px;color:#9e7626;
+}
+.rank-list{list-style:none;}
+.rank-list li{
+  display:flex;align-items:center;gap:12px;
+  padding:11px 0;
+  border-bottom:1px dashed rgba(47,93,58,.1);
+  font-size:13px;
+}
+.rank-list li:last-child{border-bottom:none;}
+.rank-list .idx{
+  width:20px;height:20px;border-radius:6px;
+  font-size:11.5px;font-weight:700;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#eef3ea;color:var(--moss);flex-shrink:0;
+}
+.rank-list li:nth-child(1) .idx{background:var(--accent);color:#fff;}
+.rank-list li:nth-child(2) .idx{background:var(--moss);color:#fff;}
+.rank-list li:nth-child(3) .idx{background:var(--earth);color:#fff;}
+.rank-list .name{flex:1;color:#3b4a40;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.rank-list .val{font-size:12px;color:var(--muted);}
+/* 动态 */
+.news-list{display:flex;flex-direction:column;gap:0;}
+.news-item{
+  display:flex;gap:18px;align-items:flex-start;
+  padding:18px 6px;
+  border-bottom:1px solid rgba(47,93,58,.12);
+  transition:.25s;
+  cursor:pointer;
+}
+.news-item:hover{background:rgba(47,93,58,.03);padding-left:12px;}
+.news-item .date{
+  font-size:12px;
+  color:var(--moss);
+  background:rgba(107,143,94,.12);
+  padding:4px 10px;
+  border-radius:8px;
+  flex-shrink:0;
+  font-weight:600;
+  letter-spacing:.5px;
+}
+.news-item h3{font-size:14.5px;color:var(--ink);font-weight:600;margin-bottom:4px;}
+.news-item p{font-size:12.5px;color:var(--muted);}
+/* 投稿工具 */
+.tool-band{
+  background:linear-gradient(120deg,#f0ebdd,#e6efdf);
+  border-radius:24px;
+  padding:38px 36px;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:36px;
+  align-items:center;
+}
+.tool-band h2{font-size:26px;color:var(--green-dark);letter-spacing:1px;margin-bottom:10px;}
+.tool-band p{font-size:13.5px;color:#55635a;margin-bottom:20px;}
+.idea-list{display:flex;flex-direction:column;gap:10px;}
+.idea-item{
+  background:#fff;
+  border-radius:12px;
+  padding:12px 16px;
+  font-size:13px;
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  box-shadow:0 2px 8px rgba(28,59,38,.05);
+  transition:.25s;
+  cursor:pointer;
+}
+.idea-item:hover{box-shadow:0 8px 18px rgba(28,59,38,.1);transform:translateX(3px);}
+.idea-item span:first-child{color:#3b4a40;}
+.idea-item span:last-child{color:var(--earth);font-size:12px;flex-shrink:0;}
+.tool-form{
+  background:#fff;
+  border-radius:18px;
+  padding:24px;
+  box-shadow:var(--shadow);
+}
+.tool-form h3{font-size:15px;color:var(--green-dark);margin-bottom:6px;}
+.tool-form p{font-size:12px;color:var(--muted);margin-bottom:14px;}
+.tool-form input{
+  width:100%;
+  border:1px solid rgba(47,93,58,.25);
+  border-radius:10px;
+  padding:10px 14px;
+  font-size:13px;
+  outline:none;
+  margin-bottom:12px;
+  transition:.3s;
+}
+.tool-form input:focus{border-color:var(--moss);box-shadow:0 0 0 3px rgba(107,143,94,.18);}
+.tool-form .btn-primary{width:100%;justify-content:center;}
+/* FAQ */
+.faq-wrap{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.faq-wrap details{
+  background:#fff;
+  border-radius:12px;
+  padding:16px 20px;
+  box-shadow:0 3px 10px rgba(28,59,38,.05);
+  transition:.25s;
+}
+.faq-wrap details[open]{box-shadow:0 8px 20px rgba(28,59,38,.1);}
+.faq-wrap summary{
+  font-size:14.5px;
+  color:var(--green-dark);
+  font-weight:600;
+  cursor:pointer;
+  list-style:none;
+  display:flex;justify-content:space-between;align-items:center;
+  letter-spacing:.3px;
+}
+.faq-wrap summary::-webkit-details-marker{display:none;}
+.faq-wrap summary::after{
+  content:"＋";
+  font-size:16px;
+  color:var(--moss);
+  font-weight:400;
+  transition:.3s;
+}
+.faq-wrap details[open] summary::after{transform:rotate(45deg);}
+.faq-wrap details p{
+  margin-top:12px;
+  font-size:13px;
+  color:#55635a;
+  line-height:1.8;
+  padding-top:12px;
+  border-top:1px dashed rgba(47,93,58,.15);
+}
+/* 联系 */
+.contact-band{
+  background:linear-gradient(135deg,var(--green-dark),#24442f);
+  color:#e9f1e5;
+  border-radius:26px;
+  padding:46px 40px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:40px;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+.contact-band::after{
+  content:"";
+  position:absolute;
+  width:260px;height:260px;
+  border-radius:50%;
+  border:40px solid rgba(217,169,76,.08);
+  right:-60px;bottom:-90px;
+}
+.contact-band h2{font-size:26px;letter-spacing:1px;margin-bottom:12px;}
+.contact-band p{font-size:13.5px;color:#c6d5c0;line-height:1.8;margin-bottom:22px;}
+.contact-info{display:flex;flex-direction:column;gap:10px;font-size:13px;}
+.contact-info div{display:flex;gap:10px;align-items:center;}
+.contact-info .k{color:var(--accent);font-weight:600;width:64px;flex-shrink:0;}
+.contact-btns{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1;}
+.contact-btns .btn{
+  justify-content:center;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.25);
+  color:#f0f4ec;
+}
+.contact-btns .btn:hover{background:rgba(255,255,255,.2);}
+.contact-btns .btn.solid{background:var(--accent);color:#2b2210;border-color:var(--accent);font-weight:700;}
+.contact-btns .btn.solid:hover{background:#e5b85e;}
+/* footer */
+footer.site-foot{
+  background:#1b2e22;
+  color:#a9bdae;
+  padding:48px 28px 26px;
+  margin-top:20px;
+}
+.foot-inner{max-width:1240px;margin:0 auto;}
+.foot-top{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:30px;
+  padding-bottom:30px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.foot-brand .logo{color:#e9f1e5;font-size:19px;letter-spacing:3px;}
+.foot-brand .logo small{color:#7f9686;}
+.foot-brand p{font-size:12.5px;line-height:1.8;margin-top:14px;color:#8ba193;max-width:280px;}
+.foot-col h4{font-size:13.5px;color:#dfe9dc;margin-bottom:14px;letter-spacing:1px;}
+.foot-col a{display:block;font-size:12.5px;margin-bottom:9px;color:#8ba193;transition:.25s;}
+.foot-col a:hover{color:var(--accent);}
+.foot-bottom{
+  padding-top:22px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12px;color:#6f8577;
+}
+.foot-bottom a{color:#8ba193;}
+/* toast / modal */
+.toast{
+  position:fixed;
+  left:50%;bottom:40px;
+  transform:translateX(-50%) translateY(20px);
+  background:var(--green-dark);
+  color:#eef4ea;
+  padding:11px 24px;
+  border-radius:26px;
+  font-size:13px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+  opacity:0;
+  pointer-events:none;
+  transition:.35s;
+  z-index:999;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.modal-mask{
+  position:fixed;inset:0;
+  background:rgba(20,35,25,.55);
+  backdrop-filter:blur(3px);
+  display:none;
+  align-items:center;justify-content:center;
+  z-index:1000;
+  padding:20px;
+}
+.modal-mask.show{display:flex;}
+.modal-box{
+  background:var(--cream);
+  border-radius:22px;
+  padding:34px 32px;
+  max-width:440px;
+  width:100%;
+  box-shadow:0 30px 70px rgba(0,0,0,.35);
+  position:relative;
+  animation:pop .3s ease;
+}
+@keyframes pop{from{transform:scale(.92);opacity:0;}to{transform:scale(1);opacity:1;}}
+.modal-box h3{font-size:19px;color:var(--green-dark);margin-bottom:8px;letter-spacing:.5px;}
+.modal-box p.sub{font-size:12.5px;color:var(--muted);margin-bottom:20px;}
+.modal-box label{font-size:12.5px;color:#4a574d;display:block;margin-bottom:6px;font-weight:600;}
+.modal-box input,.modal-box textarea{
+  width:100%;
+  border:1px solid rgba(47,93,58,.25);
+  border-radius:10px;
+  padding:10px 14px;
+  font-size:13px;
+  font-family:inherit;
+  outline:none;
+  margin-bottom:14px;
+  resize:vertical;
+  background:#fff;
+}
+.modal-box input:focus,.modal-box textarea:focus{border-color:var(--moss);box-shadow:0 0 0 3px rgba(107,143,94,.18);}
+.modal-box .btn-primary{width:100%;justify-content:center;}
+.modal-close{
+  position:absolute;
+  top:16px;right:20px;
+  font-size:20px;
+  color:var(--muted);
+  line-height:1;
+}
+.modal-close:hover{color:var(--green-dark);}
+/* back to top */
+.back-top{
+  position:fixed;
+  right:24px;bottom:24px;
+  width:46px;height:46px;
+  border-radius:50%;
+  background:var(--green);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;
+  box-shadow:0 8px 22px rgba(28,59,38,.3);
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(12px);
+  transition:.35s;
+  z-index:900;
+}
+.back-top.show{opacity:1;pointer-events:auto;transform:translateY(0);}
+.back-top:hover{background:var(--green-dark);}
+/* 点赞收藏 */
+.act-row{display:flex;gap:16px;align-items:center;font-size:12px;color:var(--muted);}
+.act-row button{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--muted);transition:.25s;}
+.act-row button:hover{color:var(--green);}
+.act-row button.liked{color:#c0584e;}
+.act-row button.saved{color:var(--earth);}
+/* responsive */
+@media(max-width:1000px){
+  .hero{grid-template-columns:1fr;gap:36px;}
+  .hero-visual{order:-1;max-width:560px;}
+  .featured-grid{grid-template-columns:1fr 1fr;}
+  .card-big{grid-column:span 2;grid-row:auto;}
+  .tool-band,.contact-band{grid-template-columns:1fr;gap:26px;}
+  .foot-top{grid-template-columns:1fr 1fr;}
+  .wall-grid{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:760px){
+  header.site-head{padding:12px 18px;}
+  nav.main-nav{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    align-items:stretch;
+    padding-top:12px;
+    border-top:1px solid rgba(47,93,58,.15);
+    margin-top:10px;
+  }
+  nav.main-nav.open{display:flex;}
+  nav.main-nav a{padding:10px 12px;border-radius:10px;}
+  .menu-toggle{display:block;}
+  .search-box{width:100%;order:5;margin-top:6px;}
+  .head-tools{flex:1;justify-content:flex-end;}
+  section{padding:44px 18px;}
+  .hero{padding:36px 18px;}
+  .featured-grid{grid-template-columns:1fr;}
+  .card-big{grid-column:auto;}
+  .wall-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:100px;}
+  .topic-band,.contact-band{padding:30px 22px;}
+  .tool-band{padding:26px 20px;}
+  .foot-top{grid-template-columns:1fr;}
+  .hero-stats{gap:22px;}
+  .announce{font-size:12px;padding:8px 14px;}
+  .announce .tag{display:none;}
+  .search-feedback{right:18px;left:18px;max-width:none;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-wrap">
+  <div class="announce">
+    <span class="tag">新上线</span>
+    <span class="txt"><b>「树影之下」第三季</b> 已更新 12 支短片 · 山野创作营开放报名 · 本周新增 3 位合作创作者</span>
+  </div>
+  <header class="site-head">
+    <div class="logo">
+      <span class="mark"></span>
+      <div>荫蔽<small>YINBI · 自然影像社区</small></div>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="展开导航">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#home">首页</a>
+      <a href="#featured">焦点内容</a>
+      <a href="#topics">专题企划</a>
+      <a href="#creators">创作者</a>
+      <a href="#wall">影像墙</a>
+      <a href="#dynamics">企业动态</a>
+      <a href="#faq">帮助</a>
+      <a href="#contact">联系</a>
+    </nav>
+    <div class="head-tools">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="搜索影像、创作者、话题…" aria-label="站内搜索">
+        <button id="searchBtn">搜索</button>
+      </div>
+    </div>
+    <div class="search-feedback" id="searchFeedback"></div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <span class="eyebrow">官方网站 · 自然遮蔽影像品牌</span>
+    <h1>荫蔽<em>之下</em>，万物生长</h1>
+    <p class="slogan">一棵树、一片影，记录人间真实的凉意与温柔</p>
+    <p class="intro">荫蔽是一家深耕自然生活影像的原创视频品牌，以「遮蔽」为方法，以「生长」为方向。我们相信树影、屋檐与山雾之间，藏着最值得被记录的生活质地。作为持续运营的内容社区，我们与创作者一同搭建高品质内容生态，用专业镜头呈现真实的自然与人心，让每一段影像都成为可被信赖的陪伴。</p>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="#featured">探索焦点内容 ▸</a>
+      <a class="btn btn-ghost" href="#creators">认识创作者</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b data-count="1860">0</b><span>+</span><p>原创影像作品</p></div>
+      <div class="stat"><b data-count="320">0</b><span>+</span><p>合作创作者</p></div>
+      <div class="stat"><b data-count="96">0</b><span>%</span><p>社区真实口碑好评</p></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="leaf-deco"></div>
+    <div class="main-img">
+      <img alt="晨雾中的林间小路，光影斑驳穿过树冠，荫蔽品牌主视觉" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='640' height='460' viewBox='0 0 640 460'><defs><linearGradient id='sky' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23dfe9d3'/><stop offset='1' stop-color='%238ea77a'/></linearGradient><linearGradient id='gr' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%233f6b48'/><stop offset='1' stop-color='%2322412c'/></linearGradient></defs><rect width='640' height='460' fill='url(%23sky)'/><circle cx='470' cy='110' r='70' fill='%23f2e2ae' opacity='0.55'/><path d='M0 300 Q160 240 320 300 T640 280 V460 H0 Z' fill='url(%23gr)'/><path d='M0 360 Q200 310 400 370 T640 350 V460 H0 Z' fill='%232a4c33'/><g stroke='%2322412c' stroke-width='9' fill='none' opacity='0.85'><path d='M110 460 V210'/><path d='M110 300 Q60 250 30 230'/><path d='M110 270 Q170 220 205 200'/></g><g fill='%234d7a52' opacity='0.9'><ellipse cx='60' cy='210' rx='58' ry='34'/><ellipse cx='185' cy='188' rx='66' ry='38'/><ellipse cx='110' cy='160' rx='80' ry='44'/></g><g fill='%23f7ecc9' opacity='0.5'><circle cx='300' cy='330' r='5'/><circle cx='330' cy='360' r='3.4'/><circle cx='270' cy='390' r='4'/><circle cx='360' cy='320' r='4.6'/></g><path d='M300 460 Q330 390 380 360 Q360 410 320 460 Z' fill='%23e6d9b6' opacity='0.35'/></svg>">
+    </div>
+    <div class="float-card">
+      <span class="dot"></span>
+      <span>本周新片 <b>《雾中山径》</b> 上线</span>
+    </div>
+  </div>
+</section>
+
+<!-- 焦点内容 -->
+<section id="featured" style="background:#eef1e6;">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="titles">
+        <h2>焦点内容</h2>
+        <p>编辑部每周精选，从树影到屋檐，从山谷到庭院，记录自然与生活交汇的瞬间。</p>
+      </div>
+      <a class="more" href="#wall">查看全部内容 ▸</a>
+    </div>
+    <div class="featured-grid">
+      <article class="vcard card-big" data-key="雾中山径 山野 徒步 天气 遮蔽">
+        <div class="cover">
+          <img alt="雾中山径的清晨步道，树冠遮蔽阳光的徒步影像封面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='640' height='400' viewBox='0 0 640 400'><defs><linearGradient id='a' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%232b4a37'/><stop offset='1' stop-color='%235b7a55'/></linearGradient></defs><rect width='640' height='400' fill='url(%23a)'/><g fill='%23cfdcc2' opacity='0.35'><ellipse cx='120' cy='80' rx='160' ry='54'/><ellipse cx='420' cy='50' rx='180' ry='44'/><ellipse cx='300' cy='140' rx='220' ry='52'/></g><path d='M0 400 Q120 300 240 340 T480 300 T640 340 V400 Z' fill='%231d3327'/><path d='M0 400 Q140 340 280 380 T560 350 T640 380 V400 Z' fill='%2313261c'/><g stroke='%23a6bf9c' stroke-width='3' opacity='0.5' fill='none'><path d='M260 400 Q300 300 340 260'/><path d='M420 400 Q400 320 380 280'/></g><circle cx='320' cy='210' r='26' fill='%23f6e8b9' opacity='0.75'/></svg>">
+          <span class="badge">本周焦点</span>
+          <span class="dur">12:48</span>
+          <div class="play"><span>▶</span></div>
+        </div>
+        <div class="body">
+          <h3>《雾中山径》第 3 集：清晨五点，走进遮蔽一切声音的林子</h3>
+          <p class="desc">跟着在地向导走过百年杉木林，在浓雾中辨识鸟鸣、苔痕与水声。这一集讲的是「安静」如何成为一种能力，以及林下荫蔽对步伐与呼吸的重新编排。</p>
+          <div class="tags"><span>山野记录</span><span>城市之外</span><span>深度随笔</span></div>
+          <div class="meta">
+            <span class="author"><span class="avatar" style="background:%234d7a52;">林</span>林间七号</span>
+            <div class="act-row">
+              <button class="like-btn">♡ 1.2k</button>
+              <button class="save-btn">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="vcard" data-key="庭院 树影 夏午 慢生活 遮蔽">
+        <div class="cover">
+          <img alt="夏日午后老庭院里的树影，藤椅与茶杯的慢生活影像封面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='480' height='270' viewBox='0 0 480 270'><defs><linearGradient id='b' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f5e9c9'/><stop offset='1' stop-color='%23d9b36e'/></linearGradient></defs><rect width='480' height='270' fill='url(%23b)'/><rect y='180' width='480' height='90' fill='%23a9773f' opacity='0.55'/><g fill='%236d8f55' opacity='0.85'><ellipse cx='120' cy='40' rx='150' ry='60'/><ellipse cx='390' cy='30' rx='130' ry='52'/></g><g stroke='%238a5f33' stroke-width='5' fill='none'><path d='M60 270 V40'/><path d='M420 270 V60'/></g><rect x='150' y='170' width='90' height='60' rx='8' fill='%23efdfc0'/><rect x='255' y='190' width='48' height='40' rx='6' fill='%23e7d2ae'/><circle cx='360' cy='200' r='22' fill='%23f7efda'/><path d='M360 200 v-14 M360 200 h14' stroke='%23a9773f' stroke-width='3'/><g fill='%23ffffff' opacity='0.55'><circle cx='190' cy='150' r='7'/><circle cx='240' cy='130' r='5'/></g></svg>">
+          <span class="badge">午后放映</span>
+          <span class="dur">08:15</span>
+          <div class="play"><span>▶</span></div>
+        </div>
+        <div class="body">
+          <h3>在老院子里等一场树影挪动</h3>
+          <p class="desc">一把藤椅、一壶冷泡茶，记录整个夏天最慢的一小时。</p>
+          <div class="meta">
+            <span class="author"><span class="avatar" style="background:%23a8825c;">迟</span>迟夏档案</span>
+            <div class="act-row">
+              <button class="like-btn">♡ 986</button>
+              <button class="save-btn">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="vcard" data-key="手作 竹编 遮蔽 工艺 匠人">
+        <div class="cover">
+          <img alt="竹编匠人在荫凉屋檐下编竹篮的手作影像封面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='480' height='270' viewBox='0 0 480 270'><rect width='480' height='270' fill='%23e7e0cd'/><rect x='40' y='40' width='400' height='150' rx='10' fill='%23c7b58e' opacity='0.5'/><g stroke='%239c8348' stroke-width='3' fill='none'><path d='M70 200 Q140 120 210 200'/><path d='M120 200 Q190 110 260 200'/><path d='M170 200 Q240 110 310 200'/><path d='M220 200 Q290 110 360 200'/><path d='M270 200 Q340 110 410 200'/></g><rect x='60' y='195' width='360' height='16' rx='8' fill='%23836a3f'/><circle cx='360' cy='80' r='34' fill='%23f3e6c4' opacity='0.8'/></svg>">
+          <span class="badge">匠心手作</span>
+          <span class="dur">15:02</span>
+          <div class="play"><span>▶</span></div>
+        </div>
+        <div class="body">
+          <h3>竹影下编篮的三天：一位老匠人的遮蔽哲学</h3>
+          <p class="desc">竹篾交错之间，是把手艺藏进阴凉里的耐心。</p>
+          <div class="meta">
+            <span class="author"><span class="avatar" style="background:%236b8f5e;">禾</span>禾下陶舍</span>
+            <div class="act-row">
+              <button class="like-btn">♡ 742</button>
+              <button class="save-btn">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="vcard" data-key="屋檐 雨声 治愈 影像 天气">
+        <div class="cover">
+          <img alt="雨中屋檐下滴水成帘的治愈影像封面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='480' height='270' viewBox='0 0 480 270'><defs><linearGradient id='c' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%235a6f6a'/><stop offset='1' stop-color='%232b3b39'/></linearGradient></defs><rect width='480' height='270' fill='url(%23c)'/><path d='M0 90 L480 40 L480 75 L0 125 Z' fill='%231d2a28'/><g stroke='%23b9c8c2' stroke-width='2' opacity='0.7'><path d='M60 125 v40'/><path d='M140 110 v54'/><path d='M230 95 v62'/><path d='M320 80 v58'/><path d='M410 65 v50'/></g><g fill='%23a9c4bd' opacity='0.45'><circle cx='60' cy='185' r='5'/><circle cx='140' cy='185' r='4'/><circle cx='230' cy='178' r='6'/><circle cx='320' cy='172' r='4'/><circle cx='410' cy='165' r='5'/></g><circle cx='390' cy='215' r='30' fill='%23d9a94c' opacity='0.18'/></svg>">
+          <span class="badge">治愈影像</span>
+          <span class="dur">06:40</span>
+          <div class="play"><span>▶</span></div>
+        </div>
+        <div class="body">
+          <h3>听一场雨，在旧屋檐下待够二十分钟</h3>
+          <p class="desc">雨帘是最天然的遮蔽，也是最好的白噪音。</p>
+          <div class="meta">
+            <span class="author"><span class="avatar" style="background:%232f5d3a;">雨</span>雨声收集局</span>
+            <div class="act-row">
+              <button class="like-btn">♡ 1.5k</button>
+              <button class="save-btn">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="vcard" data-key="苔藓 微观 自然 科普 荫蔽">
+        <div class="cover">
+          <img alt="林下苔藓微距特写，绿色孢子与露珠的自然科普影像封面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='480' height='270' viewBox='0 0 480 270'><rect width='480' height='270' fill='%23203327'/><g fill='%23518a55'><circle cx='80' cy='200' r='40'/><circle cx='150' cy='215' r='30'/><circle cx='230' cy='195' r='44'/><circle cx='310' cy='220' r='34'/><circle cx='390' cy='200' r='42'/></g><g fill='%237cb86a' opacity='0.85'><circle cx='100' cy='180' r='16'/><circle cx='240' cy='170' r='20'/><circle cx='380' cy='180' r='18'/></g><g fill='%23d8ecd1' opacity='0.9'><circle cx='130' cy='150' r='4'/><circle cx='260' cy='140' r='3'/><circle cx='330' cy='160' r='4'/><circle cx='200' cy='120' r='3'/></g><path d='M0 250 Q240 200 480 250 V270 H0 Z' fill='%23162a1e'/></svg>">
+          <span class="badge">知识科普</span>
+          <span class="dur">10:24</span>
+          <div class="play"><span>▶</span></div>
+        </div>
+        <div class="body">
+          <h3>苔藓为什么总长在北坡？一次微距下的荫蔽科普</h3>
+          <p class="desc">放大四百倍之后，我们看见了潮湿的秩序。</p>
+          <div class="meta">
+            <span class="author"><span class="avatar" style="background:%23d9a94c;color:#2b2210;">野</span>野外观察员</span>
+            <div class="act-row">
+              <button class="like-btn">♡ 638</button>
+              <button class="save-btn">☆ 收藏</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 专题企划 -->
+<section id="topics">
+  <div class="section-inner">
+    <div class="topic-band">
+      <div class="sec-head" style="margin-bottom:6px;">
+        <div class="titles">
+          <h2 style="color:#eaf2e4;">专题企划</h2>
+          <p style="color:#b9ccb4;margin-top:14px;">围绕「遮蔽」展开的原创系列，从自然到生活，从手艺到人心。</p>
+        </div>
+      </div>
+      <div class="topic-grid">
+        <div class="topic-item">
+          <div class="no">01</div>
+          <h3>树影之下</h3>
+          <p>走进十二座城市的古树与林荫道，记录树冠如何重新定义人与街区的距离。</p>
+          <span class="st">更新至第 3 季 · 12 支</span>
+        </div>
+        <div class="topic-item">
+          <div class="no">02</div>
+          <h3>屋檐档案</h3>
+          <p>从徽派天井到南方骑楼，屋檐是与人最亲近的遮蔽方式，也是建筑的温度所在。</p>
+          <span class="st">已完结 · 8 支</span>
+        </div>
+        <div class="topic-item">
+          <div class="no">03</div>
+          <h3>去有荫的地方</h3>
+          <p>轻装出发的周末路线合集，避开人潮，寻找真正能坐下来休息的那片树荫。</p>
+          <span class="st">周更 · 进行中</span>
+        </div>
+        <div class="topic-item">
+          <div class="no">04</div>
+          <h3>遮蔽的智慧</h3>
+          <p>面对方言、手艺与旧物，访谈八位普通人，谈他们如何在生活里为自己留出余地。</p>
+          <span class="st">即将上线 · 预告</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 创作者矩阵 -->
+<section id="creators" style="background:#eef1e6;">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="titles">
+        <h2>创作者矩阵</h2>
+        <p>他们从各自的荫蔽里出发，用镜头记录自然、手艺与日常，是平台最值得信赖的内容力量。</p>
+      </div>
+      <a class="more" href="#contact">申请入驻 ▸</a>
+    </div>
+    <div class="creator-grid">
+      <div class="creator-card">
+        <div class="big-avatar" style="background:linear-gradient(135deg,#4d7a52,#2f5d3a);">林</div>
+        <h3>林间七号</h3>
+        <div class="field">山野记录 · 徒步影像</div>
+        <p class="bio">走遍南方七省的林道，习惯在清晨五点出发，镜头里总是雾、苔痕和脚步。</p>
+        <div class="nums">
+          <div><b>86</b><span>作品</span></div>
+          <div><b>12.4w</b><span>关注</span></div>
+        </div>
+      </div>
+      <div class="creator-card">
+        <div class="big-avatar" style="background:linear-gradient(135deg,#c9a26b,#a8825c);">迟</div>
+        <h3>迟夏档案</h3>
+        <div class="field">生活方式 · 庭院日常</div>
+        <p class="bio">在老城租下一间带院子的房子，拍树影挪动、拍冷泡茶、拍整个夏天的慢。</p>
+        <div class="nums">
+          <div><b>54</b><span>作品</span></div>
+          <div><b>9.7w</b><span>关注</span></div>
+        </div>
+      </div>
+      <div class="creator-card">
+        <div class="big-avatar" style="background:linear-gradient(135deg,#7a9b6b,#6b8f5e);">禾</div>
+        <h3>禾下陶舍</h3>
+        <div class="field">手作工艺 · 匠人访谈</div>
+        <p class="bio">拍竹编、拍陶土、拍双手，三年间记录了四十多位民间手艺人。</p>
+        <div class="nums">
+          <div><b>41</b><span>作品</span></div>
+          <div><b>7.3w</b><span>关注</span></div>
+        </div>
+      </div>
+      <div class="creator-card">
+        <div class="big-avatar" style="background:linear-gradient(135deg,#5c8a86,#3d6b66);">雨</div>
+        <h3>雨声收集局</h3>
+        <div class="field">治愈影像 · 声音采集</div>
+        <p class="bio">只拍雨、只收雨声，把屋檐、车窗与池塘边的雨做成可以安睡的影像。</p>
+        <div class="nums">
+          <div><b>63</b><span>作品</span></div>
+          <div><b>15.1w</b><span>关注</span></div>
+        </div>
+      </div>
+      <div class="creator-card">
+        <div class="big-avatar" style="background:linear-gradient(135deg,#a8a24b,#7f7a33);">野</div>
+        <h3>野外观察员</h3>
+        <div class="field">自然科普 · 微距摄影</div>
+        <p class="bio">前植物园研究员，用微距镜头讲述苔藓、蕨类与林下世界的小小秩序。</p>
+        <div class="nums">
+          <div><b>37</b><span>作品</span></div>
+          <div><b>6.8w</b><span>关注</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 影像墙 -->
+<section id="wall">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="titles">
+        <h2>社区影像墙</h2>
+        <p>来自创作者与用户的真实画面，每一帧都有一段具体的、被遮蔽的时光。</p>
+      </div>
+    </div>
+    <div class="wall-grid">
+      <div class="wall-item w2">
+        <img alt="巨大的古榕树下人们纳凉的社区场景" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='360' viewBox='0 0 600 360'><defs><linearGradient id='w1' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23dbe7cd'/><stop offset='1' stop-color='%23a9bd8f'/></linearGradient></defs><rect width='600' height='360' fill='url(%23w1)'/><g fill='%233f6b48'><ellipse cx='300' cy='90' rx='240' ry='100'/><ellipse cx='120' cy='70' rx='120' ry='60'/><ellipse cx='500' cy='70' rx='110' ry='55'/></g><path d='M280 360 V150 Q300 120 320 150 V360 Z' fill='%235a4630'/><path d='M0 360 Q150 300 300 330 T600 320 V360 Z' fill='%234d7a52'/><g fill='%23f3e7c8'><rect x='380' y='280' width='70' height='12' rx='6'/><rect x='140' y='300' width='60' height='10' rx='5'/></g><circle cx='420' cy='320' r='14' fill='%23e0a05c'/><circle cx='180' cy='335' r='12' fill='%23c97f5e'/></svg>">
+        <div class="cap">古榕树下 · 城市纳凉记</div>
+      </div>
+      <div class="wall-item h2">
+        <img alt="窗棂投下格状光影的室内静物影像" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='480' viewBox='0 0 300 480'><rect width='300' height='480' fill='%23a98a5f'/><rect x='40' y='40' width='220' height='300' fill='%23f0e6cf'/><g stroke='%233f3a2c' stroke-width='8'><path d='M100 40 v300'/><path d='M180 40 v300'/><path d='M40 150 h220'/><path d='M40 240 h220'/></g><path d='M0 480 V340 Q120 300 300 350 V480 Z' fill='%23695b40'/><ellipse cx='150' cy='390' rx='90' ry='34' fill='%23e8dcc0' opacity='0.4'/></svg>">
+        <div class="cap">窗格与影子的几何</div>
+      </div>
+      <div class="wall-item">
+        <img alt="林间丁达尔光线穿过树叶的影像" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='220' viewBox='0 0 300 220'><rect width='300' height='220' fill='%231f3327'/><g fill='%23f7ecc0' opacity='0.5'><path d='M120 0 L170 0 L140 220 L90 220 Z'/><path d='M200 0 L240 0 L230 220 L195 220 Z'/></g><g fill='%233f6b48' opacity='0.85'><ellipse cx='40' cy='40' rx='70' ry='46'/><ellipse cx='260' cy='30' rx='80' ry='40'/></g><path d='M0 220 Q150 170 300 220 Z' fill='%2314261b'/></svg>">
+        <div class="cap">光穿过树冠的样子</div>
+      </div>
+      <div class="wall-item">
+        <img alt="山间小屋被竹林包围的隐蔽居所影像" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='220' viewBox='0 0 300 220'><rect width='300' height='220' fill='%23dfe8cf'/><g stroke='%235d7d4d' stroke-width='6'><path d='M20 220 V60'/><path d='M60 220 V40'/><path d='M250 220 V50'/><path d='M285 220 V70'/></g><path d='M110 160 L150 120 L190 160 V210 H110 Z' fill='%238f6c45'/><path d='M100 160 L150 108 L200 160 Z' fill='%235c4530'/><rect x='140' y='175' width='20' height='35' fill='%23f2e6c9'/></svg>">
+        <div class="cap">竹林深处的木屋</div>
+      </div>
+      <div class="wall-item">
+        <img alt="藤蔓爬满旧墙的纹理影像" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='220' viewBox='0 0 300 220'><rect width='300' height='220' fill='%23cbc3ae'/><g stroke='%234d6b3d' stroke-width='4' fill='none'><path d='M20 0 Q60 80 40 220'/><path d='M120 0 Q90 100 130 220'/><path d='M220 0 Q260 90 230 220'/></g><g fill='%2373a05a'><circle cx='50' cy='60' r='12'/><circle cx='120' cy='120' r='10'/><circle cx='240' cy='90' r='13'/><circle cx='90' cy='180' r='11'/><circle cx='210' cy='190' r='9'/></g></svg>">
+        <div class="cap">旧墙上的藤蔓时间</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 故事随笔 + 评价 -->
+<section style="background:#eef1e6;">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="titles">
+        <h2>故事与随笔</h2>
+        <p>影像之外，创作者也用文字记下那些被树荫接住的时刻。</p>
+      </div>
+    </div>
+    <div class="story-grid">
+      <div class="story-card">
+        <div class="cat">山野随笔</div>
+        <h3>在林子里，我第一次没有看时间</h3>
+        <p>手机没电的那个下午，我坐在倒下的杉木上，看光斑一点点挪到膝盖。原来遮蔽不是把世界关在外面，而是把自己还给自己。那天没有拍到一个镜头的构图，但记住了整片林子的呼吸。</p>
+        <div class="by"><span>林间七号</span><span>2024 · 夏</span></div>
+      </div>
+      <div class="story-card">
+        <div class="cat">手艺访谈</div>
+        <h3>老周说，竹篾要顺着它的性子走</h3>
+        <p>编了四十年竹篮的老周，看我硬掰竹条，笑着摇头。他说竹子有阴面阳面，得顺着纹理走，急不得。那天我在他屋檐下坐了三小时，学会的不是编篮，是等一根竹条变软。</p>
+        <div class="by"><span>禾下陶舍</span><span>2024 · 秋</span></div>
+      </div>
+      <div class="story-card">
+        <div class="cat">城市观察</div>
+        <h3>城市里那些被忽略的树荫座位</h3>
+        <p>我在十二个街角做过统计：有树荫的长椅，平均坐人时间是暴晒长椅的三倍。荫蔽是一种公共资源，也是城市对人最温和的让步。这条视频发出后，有街道办联系了我们，补种了七棵树。</p>
+        <div class="by"><span>野外观察员</span><span>2025 · 春</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="titles">
+        <h2>社区口碑</h2>
+        <p>来自用户、创作者与合作伙伴的真实反馈，是我们持续运营的动力。</p>
+      </div>
+    </div>
+    <div class="review-wrap">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>很少见到一个平台愿意花十五分钟拍一片苔藓。看的时候心会静下来，这是别的短视频给不了的东西。</p>
+        <div class="who"><b>阿棠</b>· 用户 · 关注 2 年</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>作为投稿作者，最打动我的是编辑会认真回每一条私信。第一次投稿的片子被逐帧给了建议，改了三次才上首页。</p>
+        <div class="who"><b>南岸</b>· 创作者 · 投稿 11 支</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★☆</div>
+        <p>雨声系列我睡前循环播放，但希望以后能出更长的单集，二十分钟那种，刚好够睡着。</p>
+        <div class="who"><b>小满</b>· 用户</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>「树影之下」第二季里那位护林员的故事我看了三遍。真实的记录比任何脚本都有力量。</p>
+        <div class="who"><b>陆归</b>· 用户 · 收藏 47 支</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>我们是一家做户外装备的小公司，和荫蔽合作过一期山径影像，播放数据和用户反馈都超出预期，合作过程专业、清晰。</p>
+        <div class="who"><b>山行品牌部</b>· 合作方</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★☆</div>
+        <p>影像墙里能看到很多素人作品，有张窗棂光影的图我特别喜欢，希望能直接联系到作者。</p>
+        <div class="who"><b>顾一</b>· 用户</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 数据榜单 -->
+<section style="background:#eef1e6;">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="titles">
+        <h2>本周榜单</h2>
+        <p>基于真实完播与收藏数据生成，帮助你快速找到值得花时间的影像。</p>
+      </div>
+    </div>
+    <div class="rank-grid">
+      <div class="rank-card">
+        <h3><span class="ico">热</span>热度榜</h3>
+        <ul class="rank-list">
+          <li><span class="idx">1</span><span class="name">听一场雨，在旧屋檐下待够二十分钟</span><span class="val">98.2</span></li>
+          <li><span class="idx">2</span><span class="name">《雾中山径》第 3 集</span><span class="val">95.7</span></li>
+          <li><span class="idx">3</span><span class="name">在老院子里等一场树影挪动</span><span class="val">91.4</span></li>
+          <li><span class="idx">4</span><span class="name">竹影下编篮的三天</span><span class="val">88.9</span></li>
+          <li><span class="idx">5</span><span class="name">苔藓为什么总长在北坡</span><span class="val">85.3</span></li>
+        </ul>
+      </div>
+      <div class="rank-card">
+        <h3><span class="ico">新</span>新人榜</h3>
+        <ul class="rank-list">
+          <li><span class="idx">1</span><span class="name">半亩茶园</span><span class="val">+1.8w</span></li>
+          <li><span class="idx">2</span><span class="name">旧窗计划</span><span class="val">+1.2w</span></li>
+          <li><span class="idx">3</span><span class="name">溪边慢记</span><span class="val">+9.6k</span></li>
+          <li><span class="idx">4</span><span class="name">乡野食谈</span><span class="val">+7.2k</span></li>
+          <li><span class="idx">5</span><span class="name">潮湿工作室</span><span class="val">+5.5k</span></li>
+        </ul>
+      </div>
+      <div class="rank-card">
+        <h3><span class="ico">赞</span>口碑榜</h3>
+        <ul class="rank-list">
+          <li><span class="idx">1</span><span class="name">树影之下 · 第二季</span><span class="val">9.8</span></li>
+          <li><span class="idx">2</span><span class="name">屋檐档案 · 徽派天井</span><span class="val">9.6</span></li>
+          <li><span class="idx">3</span><span class="name">遮蔽的智慧 · 预告</span><span class="val">9.5</span></li>
+          <li><span class="idx">4</span><span class="name">去有荫的地方 · 周末路线</span><span class="val">9.3</span></li>
+          <li><span class="idx">5</span><span class="name">雨声收集局 · 车载雨声</span><span class="val">9.1</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 创作灵感 -->
+<section>
+  <div class="section-inner">
+    <div class="tool-band">
+      <div>
+        <h2>创作灵感工作台</h2>
+        <p>不知道下一支片子拍什么？从这些真实的选题线索出发，或输入你所在的城市与环境，我们给你三个可执行的脚本方向。</p>
+        <div class="idea-list">
+          <div class="idea-item"><span>拍摄一条「同一棵树，四个节气」的对比短片</span><span>自然记录</span></div>
+          <div class="idea-item"><span>记录家里最凉快的那个角落，连续七天同一机位</span><span>生活方式</span></div>
+          <div class="idea-item"><span>采访一位在你城市里「会找树荫」的老人家</span><span>人物访谈</span></div>
+          <div class="idea-item"><span>用声音代替画面，做一期只有环境声的短影像</span><span>声音实验</span></div>
+        </div>
+      </div>
+      <div class="tool-form">
+        <h3>获取脚本灵感</h3>
+        <p>输入城市或场景，例如「杭州 · 老小区」「大理 · 山脚」</p>
+        <input type="text" id="ideaInput" placeholder="输入你的拍摄场景…">
+        <button class="btn btn-primary" id="ideaBtn">生成三个方向</button>
+        <p id="ideaResult" style="margin-top:14px;margin-bottom:0;font-size:12.5px;color:var(--green-dark);min-height:20px;"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 企业动态 -->
+<section id="dynamics" style="background:#eef1e6;">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="titles">
+        <h2>企业动态</h2>
+        <p>品牌活动、内容更新与官方发布，这里是荫蔽持续运营的公开记录。</p>
+      </div>
+    </div>
+    <div class="news-list">
+      <div class="news-item">
+        <span class="date">2025.06</span>
+        <div>
+          <h3>「树影之下」第三季正式上线，首批 12 支短片同步发布</h3>
+          <p>本季走访了六座城市的古树与林荫道，并首次加入创作者联合署名机制。</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <span class="date">2025.05</span>
+        <div>
+          <h3>山野创作营开放报名，面向所有注册创作者</h3>
+          <p>为期四天的实地拍摄营，包含自然光运用、环境声采集与短纪录片结构课程。</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <span class="date">2025.04</span>
+        <div>
+          <h3>影像上传通道升级，支持 4K 高清与多轨音频</h3>
+          <p>创作者后台同步上线素材归档与版本管理，历史作品可一键下载备份。</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <span class="date">2025.03</span>
+        <div>
+          <h3>荫蔽与三家自然教育机构达成内容合作</h3>
+          <p>合作方将在平台发布自然观察与生态保护系列内容，共同推动公众自然认知。</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <span class="date">2025.01</span>
+        <div>
+          <h3>年度社区口碑报告发布，用户满意度达 96%</h3>
+          <p>报告基于真实收藏与完播数据，同时公布了年度最受欢迎影像与创作者名单。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="titles">
+        <h2>帮助中心</h2>
+        <p>关于内容、投稿与合作的常见问题。</p>
+      </div>
+    </div>
+    <div class="faq-wrap">
+      <details>
+        <summary>如何向荫蔽投稿自己的影像作品？</summary>
+        <p>注册账号后进入「投稿」入口，填写作品标题、简介与拍摄地点，上传成片与封面即可。我们建议封面使用 16:9 比例，并附上 200 字以内的创作说明。编辑会在五个工作日内回复，通过后作品将进入内容库并参与每周推荐。</p>
+      </details>
+      <details>
+        <summary>平台对影像画质和时长有要求吗？</summary>
+        <p>支持 1080P 与 4K 高清上传，单支作品建议时长在 3 至 30 分钟之间。环境声与自然纪录类内容可放宽至 60 分钟。所有作品需为原创，或已取得完整授权。</p>
+      </details>
+      <details>
+        <summary>创作者可以同时在其他平台发布吗？</summary>
+        <p>可以。荫蔽不要求独家，但参与专题企划与品牌联合出品的作品，会在合作前单独确认发布周期。我们更希望创作者拥有多元的表达空间。</p>
+      </details>
+      <details>
+        <summary>如何申请加入创作者矩阵？</summary>
+        <p>连续投稿三支以上、且内容方向与自然、生活、手艺、影像表达相关，即可在个人主页申请。审核通过后会获得专属主页、数据看板与创作营优先报名资格。</p>
+      </details>
+      <details>
+        <summary>品牌方可以通过哪些方式合作？</summary>
+        <p>我们提供纪录片联合出品、专题企划冠名、创作营共建与影像素材授权四类合作方式。请通过页面底部联系方式说明合作方向与周期，我们会在三个工作日内回复。</p>
+      </details>
+      <details>
+        <summary>作品上传后发现封面或简介有误怎么办？</summary>
+        <p>发布后 24 小时内可自行在作品管理页修改标题与简介；封面与成片替换需提交申请，说明修改原因。涉及版权信息变更的，需补充相应授权说明。</p>
+      </details>
+      <details>
+        <summary>平台的隐私与版权声明在哪里查看？</summary>
+        <p>所有作品版权归创作者所有，荫蔽仅在授权范围内进行展示与推荐。隐私政策与版权声明可在页面底部「法律信息」中查阅，如需删除作品可随时提交下架申请。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 联系 -->
+<section id="contact" style="background:#eef1e6;">
+  <div class="section-inner">
+    <div class="contact-band">
+      <div>
+        <h2>一起，把荫蔽记录下来</h2>
+        <p>无论你是想投稿、想合作，还是单纯想聊聊最近拍到的一段画面，都欢迎联系我们。荫蔽始终相信，真实的影像需要被更多人看见。</p>
+        <div class="contact-info">
+          <div><span class="k">合作邮箱</span><span>hello@yinbi.studio</span></div>
+          <div><span class="k">投稿咨询</span><span>submit@yinbi.studio</span></div>
+          <div><span class="k">工作时间</span><span>周一至周五 10:00 - 19:00</span></div>
+          <div><span class="k">办公地址</span><span>杭州市西湖区·树影创意园 3 号楼</span></div>
+        </div>
+      </div>
+      <div class="contact-btns">
+        <button class="btn solid" id="submitBtn">我要投稿 ▸</button>
+        <button class="btn" id="copyBtn">复制本页链接</button>
+        <button class="btn" id="feedbackBtn">反馈与建议</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo">
+          <span class="mark"></span>
+          <div>荫蔽<small>YINBI</small></div>
+        </div>
+        <p>荫蔽官方网站 · 自然遮蔽影像品牌。持续运营的原创内容社区，用专业镜头记录树影、山野与人心的温度，与创作者共同搭建值得信赖的内容生态。</p>
+      </div>
+      <div class="foot-col">
+        <h4>内容</h4>
+        <a href="#featured">焦点内容</a>
+        <a href="#topics">专题企划</a>
+        <a href="#wall">影像墙</a>
+        <a href="#creators">创作者矩阵</a>
+      </div>
+      <div class="foot-col">
+        <h4>关于</h4>
+        <a href="#dynamics">企业动态</a>
+        <a href="#faq">帮助中心</a>
+        <a href="#contact">联系方式</a>
+        <a href="#home">品牌故事</a>
+      </div>
+      <div class="foot-col">
+        <h4>更多</h4>
+        <a href="#contact">申请入驻</a>
+        <a href="#contact">投稿指南</a>
+        <a href="#faq">版权声明</a>
+        <a href="#faq">隐私政策</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 荫蔽 YINBI 官方网站 · 版权所有 · 持续运营中</span>
+      <span>浙ICP备00000000号-1（占位） · <a href="#faq">法律信息</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+<div class="toast" id="toast"></div>
+
+<div class="modal-mask" id="modalMask">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">×</button>
+    <h3 id="modalTitle">投稿</h3>
+    <p class="sub" id="modalSub">填写基本信息，我们会尽快与你联系。</p>
+    <label for="mName">称呼</label>
+    <input type="text" id="mName" placeholder="怎么称呼你">
+    <label for="mContact">联系方式</label>
+    <input type="text" id="mContact" placeholder="邮箱或微信">
+    <label for="mMsg">内容说明</label>
+    <textarea id="mMsg" rows="3" placeholder="简单描述你的作品或合作方向"></textarea>
+    <button class="btn btn-primary" id="modalSubmit">提交</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  // 移动端导航
+  var menuToggle=document.getElementById('menuToggle');
+  var mainNav=document.getElementById('mainNav');
+  menuToggle.addEventListener('click',function(){
+    mainNav.classList.toggle('open');
+  });
+  mainNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      if(window.innerWidth<=760){mainNav.classList.remove('open');}
+    });
+  });
+
+  // 搜索反馈
+  var searchInput=document.getElementById('searchInput');
+  var searchBtn=document.getElementById('searchBtn');
+  var searchFeedback=document.getElementById('searchFeedback');
+  var searchData=[
+    '雾中山径 · 林间七号 · 山野记录',
+    '老院子树影 · 迟夏档案 · 慢生活',
+    '竹编匠人 · 禾下陶舍 · 手作工艺',
+    '雨声收集 · 雨声收集局 · 治愈影像',
+    '苔藓科普 · 野外观察员 · 自然知识',
+    '树影之下 · 专题企划 · 第三季',
+    '屋檐档案 · 徽派天井 · 建筑影像',
+    '山野创作营 · 报名 · 创作者活动'
+  ];
+  function doSearch(){
+    var q=(searchInput.value||'').trim();
+    searchFeedback.style.display='block';
+    if(!q){
+      searchFeedback.innerHTML='请输入关键词，例如「苔藓」「雨声」「树影」。';
+      return;
+    }
+    var hits=searchData.filter(function(s){return s.indexOf(q)>-1;});
+    if(hits.length){
+      searchFeedback.innerHTML='找到 '+hits.length+' 条相关内容：<br>'+hits.slice(0,3).join('<br>');
+    }else{
+      searchFeedback.innerHTML='暂未找到与「'+q+'」直接匹配的内容，试试「树影」「山野」「手作」。';
+    }
+  }
+  searchBtn.addEventListener('click',doSearch);
+  searchInput.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){doSearch();}
+  });
+  document.addEventListener('click',function(e){
+    if(!searchFeedback.contains(e.target)&&e.target!==searchInput&&e.target!==searchBtn){
+      searchFeedback.style.display='none';
+    }
+  });
+
+  // Toast
+  var toast=document.getElementById('toast');
+  var toastTimer;
+  function showToast(msg){
+    toast.textContent=msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(function(){toast.classList.remove('show');},2200);
+  }
+
+  // 点赞 / 收藏
+  document.querySelectorAll('.like-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var txt=btn.textContent.trim();
+      var m=txt.match(/([\d.]+)(k?)/);
+      var base=m?m[1]:'0', unit=m?m[2]:'';
+      if(btn.classList.contains('liked')){
+        btn.classList.remove('liked');
+        var v=parseFloat(base)-0.1;
+        btn.textContent='♡ '+(v>0?v.toFixed(v<10?1:0):'0')+unit;
+      }else{
+        btn.classList.add('liked');
+        var v2=parseFloat(base)+0.1;
+        btn.textContent='♥ '+(v2<10?v2.toFixed(1):Math.round(v2))+unit;
+        showToast('已点赞，感谢你的喜欢');
+      }
+    });
+  });
+  document.querySelectorAll('.save-btn').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      if(btn.classList.contains('saved')){
+        btn.classList.remove('saved');
+        btn.textContent='☆ 收藏';
+        showToast('已取消收藏');
+      }else{
+        btn.classList.add('saved');
+        btn.textContent='★ 已藏';
+        showToast('已加入收藏夹');
+      }
+    });
+  });
+
+  // 数字滚动
+  var counted=false;
+  var statEls=document.querySelectorAll('[data-count]');
+  function runCount(){
+    if(counted)return;
+    var trigger=document.querySelector('.hero-stats');
+    if(!trigger)return;
+    var rect=trigger.getBoundingClientRect();
+    if(rect.top<window.innerHeight-40){
+      counted=true;
+      statEls.forEach(function(el){
+        var target=parseInt(el.getAttribute('data-count'),10);
+        var cur=0, step=Math.max(1,Math.round(target/60));
+        var t=setInterval(function(){
+          cur+=step;
+          if(cur>=target){cur=target;clearInterval(t);}
+          el.textContent=cur;
+        },20);
+      });
+    }
+  }
+  window.addEventListener('scroll',runCount);
+  runCount();
+
+  // 回到顶部
+  var backTop=document.getElementById('backTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>500){backTop.classList.add('show');}
+    else{backTop.classList.remove('show');}
+  });
+  backTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  // 弹窗
+  var modalMask=document.getElementById('modalMask');
+  var modalTitle=document.getElementById('modalTitle');
+  var modalSub=document.getElementById('modalSub');
+  var modalClose=document.getElementById('modalClose');
+  var modalSubmit=document.getElementById('modalSubmit');
+  function openModal(title,sub){
+    modalTitle.textContent=title;
+    modalSub.textContent=sub;
+    modalMask.classList.add('show');
+  }
+  modalClose.addEventListener('click',function(){modalMask.classList.remove('show');});
+  modalMask.addEventListener('click',function(e){
+    if(e.target===modalMask){modalMask.classList.remove('show');}
+  });
+  modalSubmit.addEventListener('click',function(){
+    modalMask.classList.remove('show');
+    showToast('已收到，我们会尽快与你联系');
+  });
+  document.getElementById('submitBtn').addEventListener('click',function(){
+    openModal('我要投稿','留下称呼与联系方式，编辑会协助你完成上传。');
+  });
+  document.getElementById('feedbackBtn').addEventListener('click',function(){
+    openModal('反馈与建议','你的每一条意见我们都会认真阅读。');
+  });
+
+  // 复制链接
+  document.getElementById('copyBtn').addEventListener('click',function(){
+    var url=window.location.href;
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){
+        showToast('链接已复制');
+      }).catch(function(){
+        fallbackCopy(url);
+      });
+    }else{
+      fallbackCopy(url);
+    }
+  });
+  function fallbackCopy(text){
+    var ta=document.createElement('textarea');
+    ta.value=text;
+    ta.style.position='fixed';
+    ta.style.opacity='0';
+    document.body.appendChild(ta);
+    ta.select();
+    try{document.execCommand('copy');showToast('链接已复制');}
+    catch(e){showToast('复制失败，请手动复制');}
+    document.body.removeChild(ta);
+  }
+
+  // 灵感生成
+  document.getElementById('ideaBtn').addEventListener('click',function(){
+    var input=document.getElementById('ideaInput');
+    var val=(input.value||'').trim();
+    var result=document.getElementById('ideaResult');
+    if(!val){
+      result.textContent='请先输入一个场景，例如「杭州 · 老小区」。';
+      return;
+    }
+    var ideas=[
+      '「'+val+'的一棵树」：固定机位记录一天中光影移动，配环境声。',
+      '「找荫的人」：采访 2 位在当地生活超过十年的居民，聊他们的避暑路线。',
+      '「'+val+'的午后三十分钟」：只拍最安静的角落，不出现人脸。'
+    ];
+    result.innerHTML=ideas.join('<br>');
+    showToast('已生成三个拍摄方向');
+  });
+
+  // 卡片点击提示
+  document.querySelectorAll('.vcard').forEach(function(card){
+    card.addEventListener('click',function(){
+      var key=card.getAttribute('data-key')||'';
+      if(key){
+        searchInput.value=key.split(' ')[0];
+        showToast('已定位相关内容：'+key.split(' ')[0]);
+        document.getElementById('featured').scrollIntoView({behavior:'smooth'});
+        doSearch();
+      }
+    });
+  });
+
+  // 创作者卡片
+  document.querySelectorAll('.creator-card').forEach(function(card){
+    card.addEventListener('click',function(){
+      var name=card.querySelector('h3').textContent;
+      openModal(name,'这是 '+name+' 的主页预览，完整作品与创作手记请通过「创作者矩阵」入口查看。');
+    });
+  });
+})();
+</script>
+</body>
+  </html>
