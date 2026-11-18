@@ -1,0 +1,1578 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>精灵之森 - 自然影像品牌 - 记录林间真实与温暖</title>
+<meta name="description" content="精灵之森是专注森林与自然影像的原创视频品牌官网，汇聚创作者记录林间生活、植物科普与治愈影像，打造高品质内容生态。">
+<meta name="keywords" content="精灵之森,自然影像,森林视频,原创内容,创作者社区,品牌官网">
+<style>
+:root{
+  --green-900:#1d3a2a;
+  --green-700:#2f6b47;
+  --green-500:#4e9a6a;
+  --green-300:#a8d8b9;
+  --green-100:#e7f4ec;
+  --earth-700:#7a5c3e;
+  --earth-400:#b99a72;
+  --earth-100:#f4ede2;
+  --ink:#20302a;
+  --muted:#5f7469;
+  --line:#d8e6dd;
+  --radius:16px;
+  --shadow:0 8px 28px rgba(29,58,42,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,#f7fbf8 0%,#f2f8f4 100%);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+section{scroll-margin-top:118px}
+
+/* 吸顶公告 + 页头 */
+.sticky-top{position:sticky;top:0;z-index:80}
+.announce{
+  background:linear-gradient(90deg,var(--green-900),var(--green-700) 60%,#3b8055);
+  color:#eaf7ef;
+  font-size:13.5px;
+  letter-spacing:.2px;
+  padding:9px 0;
+}
+.announce .wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.announce .tag-badge{
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.32);
+  border-radius:999px;
+  padding:1px 10px;
+  font-size:12px;
+  white-space:nowrap;
+}
+.announce a{color:#d6ffe6;border-bottom:1px dashed rgba(214,255,230,.6);white-space:nowrap}
+.announce a:hover{color:#fff}
+
+header.site-head{
+  background:rgba(250,253,251,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{display:flex;align-items:center;gap:18px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.5px;color:var(--green-900)}
+.logo-mark{
+  width:38px;height:38px;border-radius:12px;
+  background:radial-gradient(circle at 30% 25%,#8fd6a8,#2f6b47 70%);
+  display:grid;place-items:center;color:#fff;font-size:18px;
+  box-shadow:0 4px 12px rgba(47,107,71,.35);
+}
+.logo small{display:block;font-size:10.5px;font-weight:500;color:var(--muted);letter-spacing:2px}
+nav.main-nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+nav.main-nav a{
+  padding:8px 13px;border-radius:10px;font-size:14.5px;color:#33473d;font-weight:500;
+  transition:.2s;
+}
+nav.main-nav a:hover{background:var(--green-100);color:var(--green-700)}
+.head-tools{display:flex;align-items:center;gap:10px;margin-left:8px}
+.search-box{position:relative;display:flex;align-items:center}
+.search-box input{
+  width:190px;padding:8px 12px 8px 34px;border:1px solid var(--line);
+  border-radius:999px;background:#fff;font-size:13.5px;outline:none;color:var(--ink);
+  transition:.25s;
+}
+.search-box input:focus{border-color:var(--green-500);box-shadow:0 0 0 3px rgba(78,154,106,.15);width:220px}
+.search-box .ico{position:absolute;left:12px;font-size:13px;color:var(--muted)}
+.btn{
+  border:none;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:600;
+  transition:.2s;display:inline-flex;align-items:center;gap:6px;
+}
+.btn-primary{background:var(--green-700);color:#fff;box-shadow:0 4px 14px rgba(47,107,71,.28)}
+.btn-primary:hover{background:var(--green-900);transform:translateY(-1px)}
+.btn-ghost{background:transparent;border:1px solid var(--green-500);color:var(--green-700)}
+.btn-ghost:hover{background:var(--green-100)}
+.nav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:7px 11px;font-size:16px}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:54px 0 60px}
+.hero::before{
+  content:"";position:absolute;right:-160px;top:-140px;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(168,216,185,.55),transparent 70%);
+  z-index:0;
+}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;background:var(--green-100);color:var(--green-700);
+  border-radius:999px;padding:5px 14px;font-size:13px;font-weight:600;letter-spacing:1px;
+}
+.hero h1{
+  font-size:46px;line-height:1.2;margin:16px 0 8px;color:var(--green-900);letter-spacing:1px;
+}
+.hero h1 em{font-style:normal;color:var(--green-500)}
+.hero-sub{font-size:16px;color:var(--muted);margin-bottom:16px}
+.hero-desc{font-size:15px;color:#3f5348;margin-bottom:24px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+.hero-stats{display:flex;gap:30px;flex-wrap:wrap}
+.hero-stats .stat strong{display:block;font-size:26px;color:var(--green-700);line-height:1.2}
+.hero-stats .stat span{font-size:12.5px;color:var(--muted)}
+.hero-visual{position:relative}
+.hero-visual .frame{
+  border-radius:26px;overflow:hidden;box-shadow:var(--shadow);border:6px solid #fff;
+  background:#fff;
+}
+.hero-visual .frame svg{display:block;width:100%;height:auto}
+.hero-float{
+  position:absolute;left:-22px;bottom:26px;background:#fff;border-radius:14px;
+  padding:12px 16px;box-shadow:var(--shadow);font-size:13px;color:var(--ink);
+  border:1px solid var(--line);
+}
+.hero-float strong{color:var(--green-700)}
+
+/* 通用 section */
+.sec{padding:56px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:28px;flex-wrap:wrap}
+.sec-head h2{font-size:28px;margin:0;color:var(--green-900);letter-spacing:.5px}
+.sec-head h2 span{font-size:14px;color:var(--green-500);font-weight:500;margin-left:10px;letter-spacing:1px}
+.sec-head p{margin:6px 0 0;color:var(--muted);font-size:14.5px;max-width:560px}
+.sec-link{font-size:14px;color:var(--green-700);font-weight:600;border-bottom:1px solid transparent;transition:.2s}
+.sec-link:hover{border-color:var(--green-700)}
+
+/* 焦点内容 */
+.focus-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:20px}
+.vcard{
+  background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 2px 10px rgba(29,58,42,.05);transition:.28s;display:flex;flex-direction:column;
+}
+.vcard:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--green-300)}
+.cover{position:relative;aspect-ratio:16/9;overflow:hidden;background:#dfeee5}
+.cover svg{width:100%;height:100%;object-fit:cover;display:block}
+.cover .c-tag{
+  position:absolute;left:10px;top:10px;background:rgba(29,58,42,.78);color:#eaf7ef;
+  font-size:11.5px;padding:2px 9px;border-radius:999px;letter-spacing:.5px;
+}
+.cover .c-play{
+  position:absolute;right:10px;bottom:10px;width:30px;height:30px;border-radius:50%;
+  background:rgba(255,255,255,.9);display:grid;place-items:center;color:var(--green-700);font-size:12px;
+}
+.vcard .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.vcard h3{font-size:16px;margin:0;line-height:1.45;color:var(--green-900)}
+.vcard p{margin:0;font-size:13px;color:var(--muted);line-height:1.65;flex:1}
+.meta-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.avatar{
+  width:24px;height:24px;border-radius:50%;display:grid;place-items:center;
+  color:#fff;font-size:11px;font-weight:700;flex-shrink:0;
+}
+.av-a{background:linear-gradient(135deg,#4e9a6a,#1d3a2a)}
+.av-b{background:linear-gradient(135deg,#b99a72,#7a5c3e)}
+.av-c{background:linear-gradient(135deg,#6fa8dc,#2f5d8a)}
+.av-d{background:linear-gradient(135deg,#d98ba0,#a04b66)}
+.av-e{background:linear-gradient(135deg,#cf8b4e,#8a4b1f)}
+.av-f{background:linear-gradient(135deg,#7fb7a1,#2b6b56)}
+.actions{display:flex;gap:8px;margin-top:2px}
+.act{
+  background:var(--green-100);border:none;color:var(--green-700);border-radius:999px;
+  padding:4px 11px;font-size:12px;font-weight:600;display:inline-flex;align-items:center;gap:4px;
+  transition:.2s;
+}
+.act:hover{background:var(--green-300)}
+.act.liked{background:var(--green-700);color:#fff}
+.act.saved{background:#ffe9c9;color:#8a5a1f}
+
+/* 视频流 */
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{
+  border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 15px;
+  font-size:13px;color:#3f5348;transition:.2s;
+}
+.chip:hover{border-color:var(--green-500);color:var(--green-700)}
+.chip.active{background:var(--green-700);color:#fff;border-color:var(--green-700)}
+.videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+/* 专题 */
+.topics{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.topic{
+  border-radius:var(--radius);overflow:hidden;position:relative;min-height:230px;
+  display:flex;flex-direction:column;justify-content:flex-end;color:#f3fbf6;
+  border:1px solid var(--line);box-shadow:0 2px 10px rgba(29,58,42,.06);
+}
+.topic svg{position:absolute;inset:0;width:100%;height:100%}
+.topic .topic-in{position:relative;z-index:2;padding:20px;background:linear-gradient(180deg,transparent,rgba(18,40,28,.86))}
+.topic h3{margin:0 0 4px;font-size:17px}
+.topic p{margin:0;font-size:12.5px;opacity:.88;line-height:1.6}
+.topic .status{display:inline-block;margin-top:8px;font-size:11.5px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:1px 10px}
+
+/* 创作者 */
+.creators{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.creator{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px;
+  text-align:center;transition:.25s;box-shadow:0 2px 10px rgba(29,58,42,.04);
+}
+.creator:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.creator .avatar{width:56px;height:56px;font-size:20px;margin:0 auto 10px}
+.creator h3{margin:0 0 2px;font-size:15.5px;color:var(--green-900)}
+.creator .field{font-size:12px;color:var(--green-500);font-weight:600;margin-bottom:8px}
+.creator p{font-size:12.5px;color:var(--muted);margin:0 0 10px;line-height:1.6}
+.creator .nums{display:flex;justify-content:center;gap:14px;font-size:11.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.creator .nums strong{color:var(--green-700);font-size:13px;display:block}
+.creator .btn{margin-top:12px;padding:5px 14px;font-size:12.5px}
+
+/* 故事/随笔 */
+.stories{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.story{
+  background:linear-gradient(180deg,#ffffff,#f4fbf6);border:1px solid var(--line);
+  border-radius:var(--radius);padding:24px;position:relative;
+}
+.story::before{
+  content:"“";position:absolute;right:20px;top:6px;font-size:64px;color:var(--green-300);
+  font-family:Georgia,serif;line-height:1;
+}
+.story h3{margin:0 0 10px;font-size:17px;color:var(--green-900)}
+.story p{font-size:14px;color:#3f5348;margin:0 0 14px}
+.story .meta-row{font-size:12px}
+
+/* 作品墙 */
+.wall{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:14px}
+.wall-item{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#dfeee5}
+.wall-item svg{width:100%;height:100%;display:block}
+.wall-item .cap{
+  position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-size:11.5px;color:#effaf3;
+  background:linear-gradient(180deg,transparent,rgba(18,40,28,.85));
+}
+.wall-item.big{grid-column:span 2;grid-row:span 2}
+.wall-item.wide{grid-column:span 2}
+
+/* 评价 */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.review{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;
+  box-shadow:0 2px 10px rgba(29,58,42,.04);transition:.25s;
+}
+.review:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.review p{font-size:13.5px;margin:0 0 12px;color:#3f5348}
+.review .stars{color:#e6a63c;font-size:12px;letter-spacing:1px;margin-bottom:6px}
+
+/* 企业动态 timeline */
+.timeline{position:relative;padding-left:26px}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl-item{position:relative;padding:0 0 22px}
+.tl-item::before{
+  content:"";position:absolute;left:-25px;top:7px;width:12px;height:12px;border-radius:50%;
+  background:#fff;border:3px solid var(--green-500);
+}
+.tl-item time{font-size:12px;color:var(--green-500);font-weight:700;letter-spacing:.5px}
+.tl-item h3{margin:2px 0 4px;font-size:15.5px;color:var(--green-900)}
+.tl-item p{margin:0;font-size:13.5px;color:var(--muted)}
+
+/* 合作/榜单两栏 */
+.two-col{display:grid;grid-template-columns:1.25fr .75fr;gap:24px}
+.partner-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.partner{
+  background:#fff;border:1px dashed var(--earth-400);border-radius:12px;padding:16px;
+  font-size:13.5px;color:var(--earth-700);display:flex;align-items:center;gap:10px;
+}
+.partner .dot{width:10px;height:10px;border-radius:50%;background:var(--green-500);flex-shrink:0}
+.ranklist{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+.ranklist h3{margin:0 0 12px;font-size:15.5px;color:var(--green-900)}
+.rank{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.rank:last-child{border-bottom:none}
+.rank .no{width:22px;height:22px;border-radius:7px;background:var(--green-100);color:var(--green-700);font-size:12px;font-weight:800;display:grid;place-items:center;flex-shrink:0}
+.rank .no.top{background:var(--green-700);color:#fff}
+.rank .t{flex:1;color:#3f5348}
+.rank .v{color:var(--muted);font-size:12px}
+
+/* FAQ */
+.faq{max-width:860px;margin:0 auto}
+.faq details{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 18px;margin-bottom:10px;
+  transition:.2s;
+}
+.faq details[open]{border-color:var(--green-300);box-shadow:0 4px 14px rgba(29,58,42,.07)}
+.faq summary{
+  cursor:pointer;padding:15px 0;font-size:14.5px;font-weight:600;color:var(--green-900);
+  list-style:none;display:flex;justify-content:space-between;gap:12px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"＋";color:var(--green-500);font-weight:700}
+.faq details[open] summary::after{content:"－"}
+.faq details p{margin:0 0 16px;font-size:13.5px;color:var(--muted);line-height:1.75}
+
+/* 联系/投稿 */
+.cta-band{
+  background:linear-gradient(120deg,var(--green-900),var(--green-700) 55%,#3f8a5d);
+  border-radius:24px;padding:44px 40px;color:#eaf7ef;display:grid;grid-template-columns:1.4fr .6fr;
+  gap:24px;align-items:center;box-shadow:0 14px 36px rgba(29,58,42,.24);
+}
+.cta-band h2{margin:0 0 10px;font-size:26px;color:#fff}
+.cta-band p{margin:0 0 8px;font-size:14px;opacity:.9}
+.cta-band .btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}
+.cta-band .btn-ghost:hover{background:rgba(255,255,255,.14)}
+
+/* footer */
+footer.site-foot{background:#16281e;color:#b9cfc1;margin-top:60px;padding:48px 0 26px;font-size:13.5px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:30px;margin-bottom:30px}
+footer h4{color:#eaf7ef;font-size:14.5px;margin:0 0 12px;letter-spacing:.5px}
+footer a{color:#b9cfc1;transition:.2s}
+footer a:hover{color:#fff}
+.foot-links{display:flex;flex-direction:column;gap:8px}
+.foot-brand .logo{color:#eaf7ef;margin-bottom:12px}
+.foot-brand .logo small{color:#8fae9c}
+.foot-brand p{margin:0 0 10px;line-height:1.8;color:#9db8a8}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:#8fae9c;font-size:12.5px}
+
+/* Toast & Modal */
+#toast{
+  position:fixed;left:50%;bottom:80px;transform:translate(-50%,20px);opacity:0;
+  background:rgba(22,40,30,.94);color:#eaf7ef;padding:10px 22px;border-radius:999px;
+  font-size:13.5px;z-index:200;pointer-events:none;transition:.3s;box-shadow:0 8px 24px rgba(0,0,0,.25);
+}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+.modal-mask{
+  position:fixed;inset:0;background:rgba(18,34,26,.55);backdrop-filter:blur(3px);
+  display:none;align-items:center;justify-content:center;z-index:150;padding:20px;
+}
+.modal-mask.show{display:flex}
+.modal{
+  background:#fff;border-radius:18px;padding:26px;max-width:460px;width:100%;
+  box-shadow:0 20px 50px rgba(0,0,0,.3);position:relative;animation:pop .25s ease;
+}
+@keyframes pop{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+.modal h3{margin:0 0 8px;color:var(--green-900);font-size:18px}
+.modal p{margin:0 0 14px;font-size:13.5px;color:var(--muted)}
+.modal textarea{
+  width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px;
+  font-family:inherit;resize:vertical;min-height:88px;outline:none;
+}
+.modal textarea:focus{border-color:var(--green-500)}
+.modal .m-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:14px}
+.modal .close{position:absolute;right:14px;top:12px;background:none;border:none;font-size:18px;color:var(--muted)}
+
+/* 回到顶部 */
+#backTop{
+  position:fixed;right:22px;bottom:26px;width:44px;height:44px;border-radius:50%;
+  background:var(--green-700);color:#fff;border:none;font-size:16px;display:none;place-items:center;
+  box-shadow:0 6px 18px rgba(47,107,71,.4);z-index:90;transition:.2s;
+}
+#backTop:hover{background:var(--green-900);transform:translateY(-2px)}
+#backTop.show{display:grid}
+
+/* 搜索反馈 */
+#searchTip{
+  position:absolute;top:42px;left:0;right:0;background:#fff;border:1px solid var(--line);
+  border-radius:12px;padding:10px 12px;font-size:12.5px;color:var(--muted);display:none;
+  box-shadow:var(--shadow);z-index:30;
+}
+#searchTip.show{display:block}
+
+@media(max-width:1020px){
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .focus-grid{grid-template-columns:1fr 1fr}
+  .videos-grid{grid-template-columns:1fr 1fr}
+  .creators{grid-template-columns:1fr 1fr}
+  .topics{grid-template-columns:1fr 1fr}
+  .reviews{grid-template-columns:1fr 1fr}
+  .two-col{grid-template-columns:1fr}
+  .cta-band{grid-template-columns:1fr;padding:32px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .head-inner{flex-wrap:wrap}
+  .nav-toggle{display:block;margin-left:auto}
+  nav.main-nav{
+    display:none;width:100%;order:5;margin-left:0;flex-direction:column;gap:2px;
+    padding:8px 0;border-top:1px solid var(--line)
+  }
+  nav.main-nav.open{display:flex}
+  .head-tools{order:4;width:100%;margin:8px 0 4px}
+  .search-box{width:100%}
+  .search-box input{width:100%}
+  .search-box input:focus{width:100%}
+  .hero h1{font-size:34px}
+  .focus-grid,.videos-grid,.creators,.topics,.reviews,.stories{grid-template-columns:1fr}
+  .wall{grid-template-columns:repeat(2,1fr)}
+  .wall-item.big{grid-column:span 2}
+  .partner-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .hero-visual .frame{border-width:4px}
+  .hero-float{left:8px;bottom:12px;font-size:12px;padding:9px 12px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-top">
+  <div class="announce">
+    <div class="wrap">
+      <span class="tag-badge">官方发布</span>
+      <span>「林间四时」第二季新增 6 条植物观察影像；本周六晚 20:00 举办秋季森语创作挑战赛线上分享会，报名通道已开启。</span>
+      <a href="#news">查看动态 →</a>
+    </div>
+  </div>
+  <header class="site-head">
+    <div class="wrap head-inner">
+      <a class="logo" href="#top">
+        <span class="logo-mark">森</span>
+        <span>精灵之森<small>SPIRIT FOREST</small></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="展开导航">☰</button>
+      <nav class="main-nav" id="mainNav">
+        <a href="#top">首页</a>
+        <a href="#focus">焦点影像</a>
+        <a href="#videos">影像库</a>
+        <a href="#topics">专题企划</a>
+        <a href="#creators">创作者</a>
+        <a href="#news">企业动态</a>
+        <a href="#contact">联系投稿</a>
+      </nav>
+      <div class="head-tools">
+        <div class="search-box">
+          <span class="ico">🔍</span>
+          <input type="text" id="searchInput" placeholder="搜索影像、专题或创作者" aria-label="搜索">
+          <div id="searchTip"></div>
+        </div>
+        <button class="btn btn-primary" id="submitBtn">我要投稿</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-kicker">官方网站 · 原创自然影像品牌</span>
+        <h1>精灵之森</h1>
+        <p class="hero-sub">在树影与微光之间，记录森林真实的呼吸与温度</p>
+        <p class="hero-desc">
+          精灵之森是一家深耕自然生态影像的原创视频品牌企业。我们以“真实、温暖、陪伴”为理念，搭建面向创作者与自然爱好者的高品质内容社区，持续推出森林观察、植物科普、日常记录与治愈影像。作为行业领先的自然影像平台，我们坚持正版高清的创作标准，以匠心打磨每一帧画面，让更多人看见林间的多元与力量。官方网站不仅展示精品内容，也承载品牌故事、企业动态与创作者生态的持续运营。
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#videos">浏览影像库</a>
+          <a class="btn btn-ghost" href="#creators">认识创作者</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>1,280+</strong><span>原创影像作品</span></div>
+          <div class="stat"><strong>320</strong><span>签约创作者</span></div>
+          <div class="stat"><strong>210 万</strong><span>社区自然爱好者</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="frame">
+          <svg viewBox="0 0 640 400" role="img" aria-label="晨雾笼罩的精灵之森原始林与穿过树冠的光束">
+            <defs>
+              <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#d9f0e2"/>
+                <stop offset="1" stop-color="#7fb7a1"/>
+              </linearGradient>
+              <linearGradient id="groundG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#4e7a5c"/>
+                <stop offset="1" stop-color="#24402f"/>
+              </linearGradient>
+              <linearGradient id="rayG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#fffbe8" stop-opacity=".85"/>
+                <stop offset="1" stop-color="#fffbe8" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <rect width="640" height="400" fill="url(#skyG)"/>
+            <circle cx="470" cy="96" r="52" fill="#fdf6d8" opacity=".9"/>
+            <circle cx="470" cy="96" r="78" fill="#fdf6d8" opacity=".18"/>
+            <path d="M0 300 Q120 258 240 292 T480 276 T640 300 V400 H0 Z" fill="url(#groundG)"/>
+            <g fill="#2f5d43" opacity=".92">
+              <path d="M90 300 L120 120 L150 300 Z"/>
+              <path d="M150 300 L185 150 L220 300 Z"/>
+              <path d="M430 300 L462 132 L494 300 Z"/>
+              <path d="M500 300 L532 168 L564 300 Z"/>
+            </g>
+            <g fill="#6fae86" opacity=".8">
+              <path d="M120 300 L150 190 L180 300 Z"/>
+              <path d="M455 300 L486 205 L517 300 Z"/>
+            </g>
+            <path d="M300 40 L340 210 L380 40 Z" fill="url(#rayG)"/>
+            <path d="M420 20 L450 190 L480 20 Z" fill="url(#rayG)" opacity=".7"/>
+            <g fill="#e8f7ee" opacity=".75">
+              <circle cx="250" cy="230" r="3"/>
+              <circle cx="285" cy="205" r="2"/>
+              <circle cx="320" cy="245" r="2.6"/>
+              <circle cx="360" cy="215" r="2.2"/>
+              <circle cx="400" cy="250" r="3"/>
+              <circle cx="210" cy="262" r="2"/>
+            </g>
+            <g stroke="#a8d8b9" stroke-width="2" opacity=".6" fill="none">
+              <path d="M0 330 Q160 300 320 322 T640 330"/>
+              <path d="M0 356 Q160 328 320 350 T640 356"/>
+            </g>
+          </svg>
+        </div>
+        <div class="hero-float">
+          <strong>今日林间</strong> · 清晨薄雾 4:50 拍摄于北坡苔藓谷
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点影像 -->
+  <section class="sec" id="focus">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>焦点影像<span>FEATURED</span></h2>
+          <p>由编辑与社区共同选出的本周重点内容，涵盖森林观察、植物科普与治愈影像，呈现精灵之森的品质与口碑。</p>
+        </div>
+        <a class="sec-link" href="#videos">全部影像 →</a>
+      </div>
+      <div class="focus-grid">
+        <article class="vcard">
+          <div class="cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="苔藓谷清晨薄雾中的溪流与倒木特写封面">
+              <defs>
+                <linearGradient id="f1a" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#bfe3cf"/>
+                  <stop offset="1" stop-color="#3d6b50"/>
+                </linearGradient>
+              </defs>
+              <rect width="640" height="360" fill="url(#f1a)"/>
+              <path d="M0 220 Q160 180 320 210 T640 190 V360 H0 Z" fill="#2c4d3b"/>
+              <path d="M0 260 Q140 235 300 262 T640 250" stroke="#9fd6b6" stroke-width="3" fill="none"/>
+              <g fill="#5f8f6f">
+                <ellipse cx="140" cy="290" rx="70" ry="18"/>
+                <ellipse cx="470" cy="300" rx="90" ry="22"/>
+              </g>
+              <g fill="#e6f5ec" opacity=".7">
+                <circle cx="120" cy="120" r="4"/>
+                <circle cx="210" cy="90" r="3"/>
+                <circle cx="330" cy="130" r="4"/>
+                <circle cx="450" cy="100" r="3"/>
+                <circle cx="540" cy="140" r="4"/>
+              </g>
+              <path d="M240 360 Q260 280 300 250 Q340 280 360 360 Z" fill="#7fb7a1" opacity=".55"/>
+            </svg>
+            <span class="c-tag">森林观察</span>
+            <span class="c-play">▶</span>
+          </div>
+          <div class="body">
+            <h3>苔藓谷的清晨：一次持续 14 天的低机位观察记录</h3>
+            <p>我们把镜头贴在苔藓上方 12 厘米，记录露水从叶尖滚落、蜗牛缓慢经过石缝的完整过程，并同步讲解森林微气候的形成原理。</p>
+            <div class="meta-row">
+              <span class="avatar av-a">青</span>
+              <span>青苔观察者</span><span>·</span><span>8.6 万次浏览</span>
+            </div>
+            <div class="actions">
+              <button class="act like-btn" data-liked="false">♡ 1,204</button>
+              <button class="act save-btn" data-saved="false">☆ 收藏</button>
+            </div>
+          </div>
+        </article>
+        <article class="vcard">
+          <div class="cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="森林边缘蕨类植物舒展的叶片与逆光剪影封面">
+              <defs>
+                <linearGradient id="f2a" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#e7f4ec"/>
+                  <stop offset="1" stop-color="#8cc3a4"/>
+                </linearGradient>
+              </defs>
+              <rect width="640" height="360" fill="url(#f2a)"/>
+              <g stroke="#2f6b47" stroke-width="4" fill="none" opacity=".85">
+                <path d="M200 360 Q210 230 260 140"/>
+                <path d="M260 140 Q300 190 340 210"/>
+                <path d="M260 140 Q230 190 190 215"/>
+                <path d="M250 200 Q300 225 350 250"/>
+                <path d="M240 250 Q200 270 165 290"/>
+              </g>
+              <g fill="#4e9a6a" opacity=".7">
+                <ellipse cx="330" cy="200" rx="26" ry="9" transform="rotate(-18 330 200)"/>
+                <ellipse cx="300" cy="230" rx="24" ry="8" transform="rotate(-10 300 230)"/>
+                <ellipse cx="195" cy="222" rx="22" ry="8" transform="rotate(16 195 222)"/>
+                <ellipse cx="175" cy="290" rx="20" ry="7" transform="rotate(20 175 290)"/>
+              </g>
+              <circle cx="500" cy="90" r="34" fill="#fffbe8" opacity=".85"/>
+            </svg>
+            <span class="c-tag">植物科普</span>
+            <span class="c-play">▶</span>
+          </div>
+          <div class="body">
+            <h3>蕨类识别入门：从叶形分辨身边的 7 种常见蕨</h3>
+            <p>用可在家完成的方法教你看懂羽片排列、孢子囊群位置，附一份城市公园与山野通用的观察清单。</p>
+            <div class="meta-row">
+              <span class="avatar av-b">禾</span>
+              <span>禾下草堂</span><span>·</span><span>5.2 万次浏览</span>
+            </div>
+            <div class="actions">
+              <button class="act like-btn" data-liked="false">♡ 876</button>
+              <button class="act save-btn" data-saved="false">☆ 收藏</button>
+            </div>
+          </div>
+        </article>
+        <article class="vcard">
+          <div class="cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="夜色森林中萤火虫点点微光的治愈影像封面">
+              <defs>
+                <linearGradient id="f3a" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#1b3a2f"/>
+                  <stop offset="1" stop-color="#0d1f19"/>
+                </linearGradient>
+              </defs>
+              <rect width="640" height="360" fill="url(#f3a)"/>
+              <g fill="#28473a">
+                <path d="M80 360 L105 130 L130 360 Z"/>
+                <path d="M480 360 L510 100 L540 360 Z"/>
+                <path d="M560 360 L585 160 L610 360 Z"/>
+              </g>
+              <g fill="#f4ffb0">
+                <circle cx="180" cy="150" r="3.2"/><circle cx="230" cy="200" r="2.4"/>
+                <circle cx="290" cy="120" r="3"/><circle cx="330" cy="230" r="2.6"/>
+                <circle cx="380" cy="160" r="3.4"/><circle cx="430" cy="210" r="2.2"/>
+                <circle cx="250" cy="290" r="2.8"/><circle cx="350" cy="290" r="2.4"/>
+                <circle cx="460" cy="270" r="2.8"/><circle cx="150" cy="260" r="2.2"/>
+              </g>
+              <circle cx="380" cy="160" r="12" fill="#f4ffb0" opacity=".2"/>
+              <circle cx="180" cy="150" r="10" fill="#f4ffb0" opacity=".18"/>
+            </svg>
+            <span class="c-tag">治愈影像</span>
+            <span class="c-play">▶</span>
+          </div>
+          <div class="body">
+            <h3>夏夜萤火：在无灯山谷里等了整整三个小时</h3>
+            <p>没有配乐，只有虫鸣与溪声。这条片子记录了萤火虫在苔藓坡上逐渐亮起的过程，也聊了聊夜间拍摄的取舍与克制。</p>
+            <div class="meta-row">
+              <span class="avatar av-c">溪</span>
+              <span>溪畔小满</span><span>·</span><span>12.1 万次浏览</span>
+            </div>
+            <div class="actions">
+              <button class="act like-btn" data-liked="false">♡ 2,318</button>
+              <button class="act save-btn" data-saved="false">☆ 收藏</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 影像库 -->
+  <section class="sec" id="videos" style="background:#eef7f1;border-radius:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>影像库<span>LIBRARY</span></h2>
+          <p>精灵之森持续运营的精品内容池，按主题筛选浏览。所有影像均为原创正版，提供高清版本与观看笔记。</p>
+        </div>
+        <a class="sec-link" href="#submit">成为创作者 →</a>
+      </div>
+      <div class="filter-bar" id="filterBar">
+        <button class="chip active" data-cat="all">全部</button>
+        <button class="chip" data-cat="森林">森林观察</button>
+        <button class="chip" data-cat="植物">植物科普</button>
+        <button class="chip" data-cat="日常">日常记录</button>
+        <button class="chip" data-cat="幕后">创作幕后</button>
+        <button class="chip" data-cat="人物">人物访谈</button>
+      </div>
+      <div class="videos-grid" id="videoGrid">
+
+        <article class="vcard" data-cat="森林">
+          <div class="cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="倒木上生长的菌类与苔藓生态记录封面">
+              <rect width="640" height="360" fill="#dfeee5"/>
+              <path d="M0 240 Q160 210 320 235 T640 225 V360 H0 Z" fill="#3a664e"/>
+              <rect x="120" y="200" width="360" height="46" rx="22" fill="#7a5c3e"/>
+              <g fill="#e6c28f">
+                <ellipse cx="200" cy="196" rx="26" ry="11"/>
+                <ellipse cx="300" cy="190" rx="20" ry="9"/>
+                <ellipse cx="390" cy="198" rx="24" ry="10"/>
+              </g>
+              <circle cx="520" cy="80" r="30" fill="#f3fad9" opacity=".8"/>
+            </svg>
+            <span class="c-tag">森林观察</span><span class="c-play">▶</span>
+          </div>
+          <div class="body">
+            <h3>倒木生态：一根腐木上藏着的 30 种小生命</h3>
+            <p>跟随护林员翻检倒木，用微距镜头认识菌类、甲虫与地衣之间的关系。</p>
+            <div class="meta-row"><span class="avatar av-d">山</span><span>山径笔记</span><span>·</span><span>4.4 万</span></div>
+            <div class="actions">
+              <button class="act like-btn" data-liked="false">♡ 642</button>
+              <button class="act save-btn" data-saved="false">☆ 收藏</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="vcard" data-cat="植物">
+          <div class="cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="秋日落叶层特写与坚果、苔藓的色彩记录封面">
+              <rect width="640" height="360" fill="#f4ede2"/>
+              <path d="M0 250 Q160 220 320 245 T640 235 V360 H0 Z" fill="#b99a72"/>
+              <g fill="#d98b4e">
+                <path d="M120 230 Q140 190 160 230 Q140 246 120 230 Z"/>
+                <path d="M330 210 Q352 168 374 212 Q351 230 330 210 Z"/>
+                <path d="M470 236 Q492 196 514 238 Q491 254 470 236 Z"/>
+              </g>
+              <g fill="#8a5a1f">
+                <circle cx="250" cy="270" r="12"/>
+                <circle cx="400" cy="286" r="10"/>
+                <circle cx="560" cy="272" r="11"/>
+              </g>
+            </svg>
+            <span class="c-tag">植物科普</span><span class="c-play">▶</span>
+          </div>
+          <div class="body">
+            <h3>秋日落叶辨认：橡实、枫香与壳斗科三种果实</h3>
+            <p>从颜色、形状与纹路入手，讲讲落叶林中那些容易被错过的细节。</p>
+            <div class="meta-row"><span class="avatar av-e">拾</span><span>拾叶人</span><span>·</span><span>3.7 万</span></div>
+            <div class="actions">
+              <button class="act like-btn" data-liked="false">♡ 508</button>
+              <button class="act save-btn" data-saved="false">☆ 收藏</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="vcard" data-cat="日常">
+          <div class="cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="清晨林间小径与远行者背影的日常记录封面">
+              <defs>
+                <linearGradient id="f6" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#cfeaf0"/>
+                  <stop offset="1" stop-color="#7fb0a0"/>
+                </linearGradient>
+              </defs>
+              <rect width="640" height="360" fill="url(#f6)"/>
+              <path d="M0 280 Q160 250 320 272 T640 260 V360 H0 Z" fill="#4c7d5e"/>
+              <path d="M300 360 Q320 300 340 272 Q360 300 380 360 Z" fill="#d8c8a8"/>
+              <g fill="#33553f">
+                <path d="M80 280 L104 130 L128 280 Z"/>
+                <path d="M520 280 L544 140 L568 280 Z"/>
+              </g>
+              <circle cx="340" cy="282" r="7" fill="#2f3a35"/>
+              <path d="M333 292 L347 292 L344 316 L336 316 Z" fill="#2f3a35"/>
+            </svg>
+            <span class="c-tag">日常记录</span><span class="c-play">▶</span>
+          </div>
+          <div class="body">
+            <h3>五点起床的第 100 天：一个人的林间晨行习惯</h3>
+            <p>没有滤镜与旁白，记录起床、煮茶、走完一条 3 公里小径的真实节奏。</p>
+            <div class="meta-row"><span class="avatar av-f">林</span><span>林间慢行</span><span>·</span><span>9.8 万</span></div>
+            <div class="actions">
+              <button class="act like-btn" data-liked="false">♡ 1,530</button>
+              <button class="act save-btn" data-saved="false">☆ 收藏</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="vcard" data-cat="幕后">
+          <div class="cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="森林拍摄现场相机脚架与收音设备的幕后花絮封面">
+              <rect width="640" height="360" fill="#dfe8ec"/>
+              <rect x="0" y="270" width="640" height="90" fill="#4b6b5a"/>
+              <g stroke="#2f3a35" stroke-width="6" fill="none">
+                <path d="M320 270 L280 360"/>
+                <path d="M320 270 L360 360"/>
+                <path d="M320 270 L320 360"/>
+              </g>
+              <rect x="275" y="190" width="90" height="62" rx="8" fill="#2f3a35"/>
+              <circle cx="320" cy="221" r="20" fill="#8fb7c4"/>
+              <rect x="370" y="240" width="10" height="34" fill="#2f3a35"/>
+              <circle cx="375" cy="236" r="10" fill="#c9d8dd"/>
+            </svg>
+            <span class="c-tag">创作幕后</span><span class="c-play">▶</span>
+          </div>
+          <div class="body">
+            <h3>一条 4 分钟片子的诞生：器材、等待与放弃的镜头</h3>
+            <p>把拍摄日志摊开讲，包括被雨耽误的两天和最终成片里删掉的 40 个片段。</p>
+            <div class="meta-row"><span class="avatar av-a">青</span><span>青苔观察者</span><span>·</span><span>6.1 万</span></div>
+            <div class="actions">
+              <button class="act like-btn" data-liked="false">♡ 921</button>
+              <button class="act save-btn" data-saved="false">☆ 收藏</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="vcard" data-cat="人物">
+          <div class="cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="护林员在林中接受访谈的人物访谈封面">
+              <rect width="640" height="360" fill="#eef1e8"/>
+              <path d="M0 300 Q160 270 320 292 T640 282 V360 H0 Z" fill="#6b8f6e"/>
+              <circle cx="320" cy="150" r="58" fill="#d8b48f"/>
+              <path d="M262 150 Q320 92 378 150 L378 132 Q320 76 262 132 Z" fill="#3f5348"/>
+              <rect x="256" y="208" width="128" height="94" rx="26" fill="#3f6b52"/>
+              <path d="M272 150 Q320 128 368 150" stroke="#3f5348" stroke-width="8" fill="none"/>
+            </svg>
+            <span class="c-tag">人物访谈</span><span class="c-play">▶</span>
+          </div>
+          <div class="body">
+            <h3>对话护林员老周：巡山 22 年，他记得每一棵古树</h3>
+            <p>从年轻时的伐木工到今天的巡护者，老周聊了他的选择与森林的变化。</p>
+            <div class="meta-row"><span class="avatar av-b">禾</span><span>禾下草堂</span><span>·</span><span>7.3 万</span></div>
+            <div class="actions">
+              <button class="act like-btn" data-liked="false">♡ 1,102</button>
+              <button class="act save-btn" data-saved="false">☆ 收藏</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="vcard" data-cat="森林">
+          <div class="cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="雨后森林地面水洼倒映树冠的影像封面">
+              <rect width="640" height="360" fill="#9ec4b0"/>
+              <path d="M0 200 Q160 170 320 196 T640 186 V360 H0 Z" fill="#3e6a52"/>
+              <ellipse cx="320" cy="300" rx="230" ry="46" fill="#c9e4d4" opacity=".85"/>
+              <g fill="#2c4d3b" opacity=".7">
+                <path d="M180 300 L200 210 L220 300 Z"/>
+                <path d="M420 300 L442 205 L464 300 Z"/>
+              </g>
+              <g stroke="#e8f7ee" stroke-width="2" opacity=".7" fill="none">
+                <path d="M200 90 L230 130"/><path d="M260 70 L280 120"/><path d="M400 80 L420 128"/>
+              </g>
+            </svg>
+            <span class="c-tag">森林观察</span><span class="c-play">▶</span>
+          </div>
+          <div class="body">
+            <h3>雨后的森林有多吵：一次 20 分钟的环境声采集</h3>
+            <p>带上双耳麦克风走进雨后林道，听听水滴、鸟鸣与远处溪流叠在一起的声音。</p>
+            <div class="meta-row"><span class="avatar av-c">溪</span><span>溪畔小满</span><span>·</span><span>5.6 万</span></div>
+            <div class="actions">
+              <button class="act like-btn" data-liked="false">♡ 784</button>
+              <button class="act save-btn" data-saved="false">☆ 收藏</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="vcard" data-cat="植物">
+          <div class="cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="阳台窗边的微型苔藓盆栽与浇水工具科普封面">
+              <rect width="640" height="360" fill="#f3f7ea"/>
+              <rect x="200" y="200" width="240" height="120" rx="12" fill="#b99a72"/>
+              <path d="M220 200 Q320 140 420 200 Z" fill="#4e9a6a"/>
+              <g fill="#6fae86">
+                <circle cx="260" cy="188" r="14"/><circle cx="310" cy="172" r="18"/>
+                <circle cx="370" cy="186" r="15"/><circle cx="400" cy="196" r="10"/>
+              </g>
+              <circle cx="520" cy="120" r="36" fill="#fdf6d8" opacity=".85"/>
+            </svg>
+            <span class="c-tag">植物科普</span><span class="c-play">▶</span>
+          </div>
+          <div class="body">
+            <h3>阳台苔藓养成记：湿度、光照与换盆的三个关键</h3>
+            <p>从选苔到养护，用 12 周时间记录一盆微型苔藓景观的变化与失败经验。</p>
+            <div class="meta-row"><span class="avatar av-e">拾</span><span>拾叶人</span><span>·</span><span>4.9 万</span></div>
+            <div class="actions">
+              <button class="act like-btn" data-liked="false">♡ 668</button>
+              <button class="act save-btn" data-saved="false">☆ 收藏</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="vcard" data-cat="幕后">
+          <div class="cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="后期调色台与时间线界面记录创作流程封面">
+              <rect width="640" height="360" fill="#e6eef0"/>
+              <rect x="90" y="80" width="460" height="200" rx="12" fill="#2c3a3f"/>
+              <g fill="#4f8f76">
+                <rect x="110" y="180" width="90" height="14" rx="7"/>
+                <rect x="210" y="204" width="120" height="14" rx="7"/>
+                <rect x="340" y="228" width="150" height="14" rx="7"/>
+              </g>
+              <g fill="#8fd6a8">
+                <rect x="110" y="110" width="140" height="46" rx="6"/>
+                <rect x="262" y="110" width="120" height="46" rx="6"/>
+                <rect x="394" y="110" width="130" height="46" rx="6"/>
+              </g>
+            </svg>
+            <span class="c-tag">创作幕后</span><span class="c-play">▶</span>
+          </div>
+          <div class="body">
+            <h3>森林色怎么调：一期关于绿色还原的调色笔记</h3>
+            <p>分享三组参数与思路，让雾感、层次与苔藓的鲜度在画面里自然共存。</p>
+            <div class="meta-row"><span class="avatar av-f">林</span><span>林间慢行</span><span>·</span><span>5.1 万</span></div>
+            <div class="actions">
+              <button class="act like-btn" data-liked="false">♡ 733</button>
+              <button class="act save-btn" data-saved="false">☆ 收藏</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="sec" id="topics">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>专题企划<span>PROJECTS</span></h2>
+          <p>由精灵之森编辑团队策划的系列企划，围绕森林与自然展开长期观察，体现品牌的社会责任与匠心。</p>
+        </div>
+      </div>
+      <div class="topics">
+        <article class="topic">
+          <svg viewBox="0 0 480 300" role="img" aria-label="林间四时系列专题封面：四季树冠色彩渐变" preserveAspectRatio="xMidYMid slice">
+            <rect width="480" height="300" fill="#2f6b47"/>
+            <g opacity=".55">
+              <circle cx="120" cy="90" r="60" fill="#a8d8b9"/>
+              <circle cx="260" cy="140" r="46" fill="#e6c28f"/>
+              <circle cx="380" cy="80" r="52" fill="#d98b4e"/>
+            </g>
+            <path d="M0 240 Q120 200 240 230 T480 220 V300 H0 Z" fill="#1d3a2a"/>
+          </svg>
+          <div class="topic-in">
+            <h3>林间四时</h3>
+            <p>用一整年跟拍一片原始林，记录春芽、夏雨、秋叶与冬雪的变化节奏。</p>
+            <span class="status">第一季已完结 · 第二季更新中</span>
+          </div>
+        </article>
+        <article class="topic">
+          <svg viewBox="0 0 480 300" role="img" aria-label="微小居民系列专题封面：放大镜下的昆虫与苔藓" preserveAspectRatio="xMidYMid slice">
+            <rect width="480" height="300" fill="#dfeee5"/>
+            <circle cx="240" cy="150" r="110" fill="none" stroke="#2f6b47" stroke-width="10"/>
+            <circle cx="240" cy="150" r="78" fill="#8cc3a4"/>
+            <g fill="#24402f">
+              <ellipse cx="228" cy="146" rx="16" ry="22"/>
+              <circle cx="228" cy="120" r="10"/>
+              <path d="M214 130 L192 116"/><path d="M242 130 L264 116"/>
+            </g>
+            <g fill="#2f6b47">
+              <circle cx="150" cy="80" r="8"/><circle cx="340" cy="220" r="6"/>
+            </g>
+          </svg>
+          <div class="topic-in">
+            <h3>微小居民</h3>
+            <p>把镜头放大到毫米级，认识苔藓间的跳虫、螨虫与它们奇妙的共生关系。</p>
+            <span class="status">共 12 集 · 已上线 9 集</span>
+          </div>
+        </article>
+        <article class="topic">
+          <svg viewBox="0 0 480 300" role="img" aria-label="森语者系列专题封面：护林人与创作者的剪影对话" preserveAspectRatio="xMidYMid slice">
+            <rect width="480" height="300" fill="#1b3a2f"/>
+            <g fill="#3d6b50">
+              <path d="M60 300 L88 110 L116 300 Z"/>
+              <path d="M360 300 L390 90 L420 300 Z"/>
+            </g>
+            <circle cx="190" cy="180" r="30" fill="#d8b48f"/>
+            <circle cx="300" cy="180" r="30" fill="#c9a27a"/>
+            <rect x="160" y="212" width="60" height="88" rx="18" fill="#2f6b47"/>
+            <rect x="270" y="212" width="60" height="88" rx="18" fill="#4e9a6a"/>
+          </svg>
+          <div class="topic-in">
+            <h3>森语者</h3>
+            <p>护林员、植物学者与在地创作者的深度访谈，讲述人与森林的长期相处。</p>
+            <span class="status">每月更新 2 期 · 可报名参与</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者 -->
+  <section class="sec" id="creators" style="background:#f0f8f3">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>创作者矩阵<span>CREATORS</span></h2>
+          <p>精灵之森的内容生态由 320 位签约创作者共同支撑。他们来自植物学、生态保护、影像记录等不同领域。</p>
+        </div>
+        <a class="sec-link" href="#submit">加入创作计划 →</a>
+      </div>
+      <div class="creators">
+        <article class="creator">
+          <div class="avatar av-a">青</div>
+          <h3>青苔观察者</h3>
+          <div class="field">森林观察 · 微距影像</div>
+          <p>七年跟拍一座山谷的苔藓与昆虫，擅长低机位长时间观察记录。</p>
+          <div class="nums">
+            <div><strong>186</strong>作品</div>
+            <div><strong>42 万</strong>粉丝</div>
+          </div>
+          <button class="btn btn-ghost author-btn" data-name="青苔观察者" data-info="七年跟拍山谷苔藓，擅长微距与低机位长时间观察，代表企划《微小居民》。">了解作者</button>
+        </article>
+        <article class="creator">
+          <div class="avatar av-b">禾</div>
+          <h3>禾下草堂</h3>
+          <div class="field">植物科普 · 认种指南</div>
+          <p>植物学背景，把专业知识拆成普通人也看得懂的观察方法。</p>
+          <div class="nums">
+            <div><strong>132</strong>作品</div>
+            <div><strong>28 万</strong>粉丝</div>
+          </div>
+          <button class="btn btn-ghost author-btn" data-name="禾下草堂" data-info="植物学硕士出身，专注蕨类与壳斗科植物科普，主张先观察再命名，内容严谨易懂。">了解作者</button>
+        </article>
+        <article class="creator">
+          <div class="avatar av-c">溪</div>
+          <h3>溪畔小满</h3>
+          <div class="field">治愈影像 · 环境声采集</div>
+          <p>喜欢在没有配乐的画面里，让溪流与虫鸣自己说话。</p>
+          <div class="nums">
+            <div><strong>98</strong>作品</div>
+            <div><strong>35 万</strong>粉丝</div>
+          </div>
+          <button class="btn btn-ghost author-btn" data-name="溪畔小满" data-info="环境声与治愈影像创作者，坚持无旁白记录，作品被多个自然教育机构用于课堂。">了解作者</button>
+        </article>
+        <article class="creator">
+          <div class="avatar av-d">山</div>
+          <h3>山径笔记</h3>
+          <div class="field">户外活动 · 生态记录</div>
+          <p>沿山径走访林区，记录倒木生态与森林防火的日常细节。</p>
+          <div class="nums">
+            <div><strong>76</strong>作品</div>
+            <div><strong>19 万</strong>粉丝</div>
+          </div>
+          <button class="btn btn-ghost author-btn" data-name="山径笔记" data-info="长期与护林站合作拍摄，关注森林防火、倒木生态与山区徒步安全知识。">了解作者</button>
+        </article>
+        <article class="creator">
+          <div class="avatar av-e">拾</div>
+          <h3>拾叶人</h3>
+          <div class="field">手作DIY · 自然美育</div>
+          <p>把落叶与坚果做成标本和手作，让自然美育走进更多家庭。</p>
+          <div class="nums">
+            <div><strong>64</strong>作品</div>
+            <div><strong>15 万</strong>粉丝</div>
+          </div>
+          <button class="btn btn-ghost author-btn" data-name="拾叶人" data-info="自然美育创作者，设计适合亲子完成的落叶标本与手作教程，强调取材不伤林。">了解作者</button>
+        </article>
+        <article class="creator">
+          <div class="avatar av-f">林</div>
+          <h3>林间慢行</h3>
+          <div class="field">日常记录 · 生活方式</div>
+          <p>用一条固定小径和一整年时间，记录晨行的习惯与心境变化。</p>
+          <div class="nums">
+            <div><strong>110</strong>作品</div>
+            <div><strong>24 万</strong>粉丝</div>
+          </div>
+          <button class="btn btn-ghost author-btn" data-name="林间慢行" data-info="生活方式影像作者，主张慢节奏记录，连续四年发布《林间晨行》系列。">了解作者</button>
+        </article>
+        <article class="creator">
+          <div class="avatar av-a">风</div>
+          <h3>风过林梢</h3>
+          <div class="field">声音设计 · 治愈影像</div>
+          <p>专注自然声音设计与影像后期，让每一条片子的呼吸都更自然。</p>
+          <div class="nums">
+            <div><strong>58</strong>作品</div>
+            <div><strong>13 万</strong>粉丝</div>
+          </div>
+          <button class="btn btn-ghost author-btn" data-name="风过林梢" data-info="声音设计师，负责平台多部企划的环境声采集与混音，追求真实的空间感。">了解作者</button>
+        </article>
+        <article class="creator">
+          <div class="avatar av-c">木</div>
+          <h3>木叶手记</h3>
+          <div class="field">文化访谈 · 在地故事</div>
+          <p>走访山村民居与老手艺人，记录与森林共生的生活方式。</p>
+          <div class="nums">
+            <div><strong>47</strong>作品</div>
+            <div><strong>11 万</strong>粉丝</div>
+          </div>
+          <button class="btn btn-ghost author-btn" data-name="木叶手记" data-info="在地文化记录者，长期采访山区手艺人，作品关注传统技艺与自然材料的延续。">了解作者</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 故事 + 作品墙 -->
+  <section class="sec" id="stories">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>故事与影像墙<span>STORIES &amp; WALL</span></h2>
+          <p>短小的文字与影像片段，记录创作者与自然之间真实、温暖的日常。</p>
+        </div>
+      </div>
+      <div class="stories" style="margin-bottom:28px">
+        <article class="story">
+          <h3>在雨里等一只蜗牛</h3>
+          <p>那天雨下得不大，我蹲在苔藓坡前等了四十分钟，只为了拍一只蜗牛从石缝爬到蕨叶背面。它走得很慢，慢到我有时间把相机参数调了三遍。后来这段只用了 8 秒，但我觉得值。森林教会我的第一件事，就是不急着抵达。</p>
+          <div class="meta-row"><span class="avatar av-a">青</span><span>青苔观察者</span><span>·</span><span>拍摄手记</span></div>
+        </article>
+        <article class="story">
+          <h3>护林员老周的那本旧笔记</h3>
+          <p>老周从抽屉里拿出一本被雨水泡皱的笔记本，里面记着每棵古树的位置、树龄和他给它起的名字。他说自己记得的不只是树，还有每年春天第一批来山里的人。我们拍下这本笔记的每一页，也拍下他翻页时停顿的那几秒。</p>
+          <div class="meta-row"><span class="avatar av-b">禾</span><span>禾下草堂</span><span>·</span><span>访谈随笔</span></div>
+        </article>
+      </div>
+      <div class="wall">
+        <div class="wall-item big">
+          <svg viewBox="0 0 400 300" role="img" aria-label="森林清晨薄雾中的高大树冠全景">
+            <rect width="400" height="300" fill="#cfe6d8"/>
+            <path d="M0 230 Q100 200 200 220 T400 212 V300 H0 Z" fill="#3d6b50"/>
+            <g fill="#2f6b47">
+              <path d="M80 230 L110 70 L140 230 Z"/>
+              <path d="M300 230 L330 90 L360 230 Z"/>
+            </g>
+            <circle cx="200" cy="70" r="34" fill="#fffbe8" opacity=".8"/>
+          </svg>
+          <span class="cap">晨雾中的林冠线 · 青苔观察者</span>
+        </div>
+        <div class="wall-item">
+          <svg viewBox="0 0 200 150" role="img" aria-label="地面苔藓与露珠的微距特写">
+            <rect width="200" height="150" fill="#8cc3a4"/>
+            <g fill="#4e9a6a">
+              <circle cx="50" cy="100" r="22"/><circle cx="110" cy="112" r="26"/><circle cx="160" cy="96" r="18"/>
+            </g>
+            <g fill="#eaf7ef"><circle cx="78" cy="86" r="4"/><circle cx="132" cy="88" r="3"/><circle cx="46" cy="74" r="3"/></g>
+          </svg>
+          <span class="cap">露珠与苔藓</span>
+        </div>
+        <div class="wall-item">
+          <svg viewBox="0 0 200 150" role="img" aria-label="林间小溪石头上流动的水纹">
+            <rect width="200" height="150" fill="#bfe3cf"/>
+            <path d="M0 90 Q60 70 120 92 T200 84 V150 H0 Z" fill="#4e9a6a"/>
+            <g stroke="#eaf7ef" stroke-width="2" fill="none" opacity=".8">
+              <path d="M20 110 Q60 100 100 112 T190 108"/>
+              <path d="M20 126 Q60 116 100 128 T190 124"/>
+            </g>
+          </svg>
+          <span class="cap">溪流石纹 · 溪畔小满</span>
+        </div>
+        <div class="wall-item wide">
+          <svg viewBox="0 0 400 150" role="img" aria-label="秋日落叶铺满林道的地面影像">
+            <rect width="400" height="150" fill="#d8c8a8"/>
+            <g fill="#d98b4e">
+              <path d="M60 90 Q78 56 96 92 Q78 106 60 90 Z"/>
+              <path d="M180 78 Q200 40 220 82 Q199 98 180 78 Z"/>
+              <path d="M300 92 Q320 54 340 94 Q319 110 300 92 Z"/>
+            </g>
+            <g fill="#8a5a1f"><circle cx="130" cy="118" r="9"/><circle cx="250" cy="122" r="8"/><circle cx="360" cy="116" r="9"/></g>
+          </svg>
+          <span class="cap">秋叶铺地 · 拾叶人</span>
+        </div>
+        <div class="wall-item">
+          <svg viewBox="0 0 200 150" role="img" aria-label="夜晚森林中的萤火微光">
+            <rect width="200" height="150" fill="#16302a"/>
+            <g fill="#f4ffb0">
+              <circle cx="50" cy="60" r="3"/><circle cx="90" cy="90" r="2.4"/>
+              <circle cx="130" cy="50" r="3"/><circle cx="160" cy="100" r="2.6"/><circle cx="70" cy="120" r="2.2"/>
+            </g>
+          </svg>
+          <span class="cap">夏夜萤火</span>
+        </div>
+        <div class="wall-item">
+          <svg viewBox="0 0 200 150" role="img" aria-label="森林小径通向深处的远景">
+            <rect width="200" height="150" fill="#dfe8ec"/>
+            <path d="M0 110 Q50 92 100 104 T200 98 V150 H0 Z" fill="#4c7d5e"/>
+            <path d="M92 150 Q100 118 108 104 Q116 118 124 150 Z" fill="#d8c8a8"/>
+          </svg>
+          <span class="cap">林道深处 · 林间慢行</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 口碑 + 榜单 -->
+  <section class="sec" id="reviews" style="background:#eef7f1">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>社区口碑<span>VOICES</span></h2>
+          <p>来自用户、合作机构与教育工作者的真实反馈。精灵之森始终把用户至上放在内容运营的第一位。</p>
+        </div>
+      </div>
+      <div class="reviews" style="margin-bottom:26px">
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>带孩子看《微小居民》之后，他第一次主动蹲下来观察楼下的苔藓。这种把专业讲得温柔的能力，很少见。</p>
+          <div class="meta-row"><span class="avatar av-d">李</span><span>自然教育老师</span></div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>画质和声音都很扎实，没有多余的煽情音乐。做自然纪录片选修课时，我直接用了这里的素材。</p>
+          <div class="meta-row"><span class="avatar av-b">陈</span><span>高校讲师</span></div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★☆</div>
+          <p>专题企划的更新节奏很稳，每期都有新的观察角度。希望以后能多一些夜间拍摄的幕后内容。</p>
+          <div class="meta-row"><span class="avatar av-f">周</span><span>影像爱好者</span></div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>投稿流程清晰，编辑会给具体的修改建议，不是简单退回。第一次投稿就学到了很多。</p>
+          <div class="meta-row"><span class="avatar av-e">吴</span><span>新人创作者</span></div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★☆</div>
+          <p>喜欢这种不吵的网站。找片子很容易，标签和专题都整理得舒服，周末会固定来逛一逛。</p>
+          <div class="meta-row"><span class="avatar av-a">许</span><span>长期用户</span></div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>和精灵之森合作过一次森林防火公益短片，团队对内容真实性的坚持让我们印象很深。</p>
+          <div class="meta-row"><span class="avatar av-c">林</span><span>公益机构合作方</span></div>
+        </article>
+      </div>
+      <div class="two-col">
+        <div>
+          <h3 style="font-size:17px;color:var(--green-900);margin:0 0 12px">合作机构与伙伴</h3>
+          <div class="partner-grid">
+            <div class="partner"><span class="dot"></span>北岭森林保护站</div>
+            <div class="partner"><span class="dot"></span>青野自然教育中心</div>
+            <div class="partner"><span class="dot"></span>苔原影像实验室</div>
+            <div class="partner"><span class="dot"></span>山麓图书出版计划</div>
+          </div>
+          <p style="font-size:13px;color:var(--muted);margin:14px 0 0">我们与多家自然保护与教育机构保持长期合作，共同推动森林观察内容的专业化与公益传播，践行企业社会责任。</p>
+        </div>
+        <div class="ranklist">
+          <h3>本周热度榜</h3>
+          <div class="rank"><span class="no top">1</span><span class="t">夏夜萤火：无灯山谷的三个小时</span><span class="v">12.1 万</span></div>
+          <div class="rank"><span class="no top">2</span><span class="t">五点起床的第 100 天</span><span class="v">9.8 万</span></div>
+          <div class="rank"><span class="no top">3</span><span class="t">苔藓谷的清晨观察记录</span><span class="v">8.6 万</span></div>
+          <div class="rank"><span class="no">4</span><span class="t">对话护林员老周</span><span class="v">7.3 万</span></div>
+          <div class="rank"><span class="no">5</span><span class="t">一条 4 分钟片子的诞生</span><span class="v">6.1 万</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 -->
+  <section class="sec" id="news">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2>企业动态<span>NEWSROOM</span></h2>
+          <p>精灵之森官方发布的内容更新、企划进度与社区活动公告。</p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="timeline">
+          <div class="tl-item">
+            <time>2025 年 10 月 18 日</time>
+            <h3>「林间四时」第二季上线，新增 6 条植物观察影像</h3>
+            <p>本季把镜头转向林下草本层，用更近的距离记录花期与昆虫访花的完整过程。</p>
+          </div>
+          <div class="tl-item">
+            <time>2025 年 10 月 12 日</time>
+            <h3>秋季森语创作挑战赛开启报名</h3>
+            <p>面向所有社区创作者征集 3 分钟以内的森林主题影像，报名与上传通道开放至 11 月 20 日。</p>
+          </div>
+          <div class="tl-item">
+            <time>2025 年 9 月 28 日</time>
+            <h3>与北岭森林保护站达成年度公益合作</h3>
+            <p>双方将联合制作森林防火与生态修复系列短片，并提供面向学校的免费授权版本。</p>
+          </div>
+          <div class="tl-item">
+            <time>2025 年 9 月 15 日</time>
+            <h3>创作者投稿指南 3.0 发布</h3>
+            <p>新增拍摄器材建议、环境声采集规范与素材授权说明，帮助新人更顺畅地完成首次投稿。</p>
+          </div>
+          <div class="tl-item">
+            <time>2025 年 8 月 30 日</time>
+            <h3>影像库上线标签筛选与观看笔记功能</h3>
+            <p>用户可按主题快速筛选内容，并在观看页查看创作者撰写的拍摄笔记与延伸阅读。</p>
+          </div>
+        </div>
+        <div>
+          <div class="ranklist" style="margin-bottom:16px">
+            <h3>创作灵感速递</h3>
+            <p style="font-size:13.5px;color:var(--muted);margin:0 0 10px">编辑团队每周整理可执行的选题与拍摄思路，帮助创作者快速开工。</p>
+            <div class="rank"><span class="no">A</span><span class="t">以一片叶子为主角，拍 60 秒的四季</span></div>
+            <div class="rank"><span class="no">B</span><span class="t">用环境声代替配乐的一段林道行走</span></div>
+            <div class="rank"><span class="no">C</span><span class="t">记录雨后 24 小时的地面变化</span></div>
+            <div class="rank"><span class="no">D</span><span class="t">采访身边与树有关的一个人</span></div>
+          </div>
+          <div class="ranklist">
+            <h3>新人扶持计划</h3>
+            <p style="font-size:13.5px;color:var(--muted);margin:0">完成首次投稿并通过审核的新人，可获得编辑一对一反馈、首页推荐位与拍摄器材借用资格。我们相信多元与包容的表达，是内容生态持续成长的基础。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec" id="faq" style="background:#eef7f1">
+    <div class="wrap">
+      <div class="sec-head" style="justify-content:center;text-align:center">
+        <div>
+          <h2 style="text-align:center">常见问题<span>FAQ</span></h2>
+          <p style="margin:6px auto 0;text-align:center">关于内容、投稿与合作的常见疑问，帮助你更快了解精灵之森官方网站。</p>
+        </div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>精灵之森的内容都是原创的吗？</summary>
+          <p>是的。影像库中的所有内容均由平台签约创作者或编辑团队原创制作，并完成授权登记。我们坚持正版高清的发布标准，转载与合作使用均需获得书面许可。</p>
+        </details>
+        <details>
+          <summary>如何向精灵之森投稿？</summary>
+          <p>点击页面右上角或页面底部的投稿按钮，填写作品信息与素材链接即可。建议先阅读《创作者投稿指南 3.0》，了解画面规格、环境声采集与授权要求。首次投稿会在 5 个工作日内收到编辑反馈。</p>
+        </details>
+        <details>
+          <summary>投稿有题材限制吗？</summary>
+          <p>内容需与森林、自然生态、户外生活或自然美育相关，鼓励真实记录与多元表达。涉及采集、捕捉或干扰野生动物的画面不予收录，我们倡导不打扰的观察方式。</p>
+        </details>
+        <details>
+          <summary>可以申请使用影像素材用于教学吗？</summary>
+          <p>可以。自然教育机构与学校可提交使用申请，说明用途与受众范围。用于公益教学的部分场景可免费授权，商业用途需另行沟通。</p>
+        </details>
+        <details>
+          <summary>专题企划的更新频率是怎样的？</summary>
+          <p>「林间四时」按季节更新，「微小居民」每月 1 至 2 集，「森语者」每月 2 期。具体进度会提前在企业动态中公布。</p>
+        </details>
+        <details>
+          <summary>如何参与秋季森语创作挑战赛？</summary>
+          <p>在活动页面完成报名后上传作品即可，作品需为 3 分钟以内的森林主题原创影像。评选综合编辑评审与社区投票，结果将于 12 月初公布。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系/投稿 -->
+  <section class="sec" id="contact">
+    <div class="wrap">
+      <div class="cta-band" id="submit">
+        <div>
+          <h2>把你的森林故事交给精灵之森</h2>
+          <p>无论是一段十分钟的观察记录，还是一条三十秒的林间声音，我们都愿意认真看完。</p>
+          <p>投稿邮箱：create@spiritforest.example　｜　合作联系：cooperate@spiritforest.example</p>
+          <p style="opacity:.8;font-size:13px">工作时间：周一至周五 10:00 – 18:00　｜　地址：北岭林区创意园 3 号楼</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <button class="btn btn-primary" id="submitBtn2" style="background:#fff;color:var(--green-700)">立即投稿</button>
+          <button class="btn btn-ghost" id="copyLinkBtn">复制本页链接</button>
+          <button class="btn btn-ghost" id="reportBtn">反馈与建议</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo">
+          <span class="logo-mark">森</span>
+          <span>精灵之森<small>SPIRIT FOREST</small></span>
+        </div>
+        <p>精灵之森官方网站 · 专注森林与自然影像的原创视频品牌。我们以真实记录为底色，持续运营高品质内容生态，陪伴每一位自然爱好者成长。</p>
+        <p>深耕自然影像垂直领域，坚持原创正版与匠心制作，努力成为用户首选的森林影像平台。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <div class="foot-links">
+          <a href="#focus">焦点影像</a>
+          <a href="#videos">影像库</a>
+          <a href="#topics">专题企划</a>
+          <a href="#stories">故事与影像墙</a>
+        </div>
+      </div>
+      <div>
+        <h4>社区</h4>
+        <div class="foot-links">
+          <a href="#creators">创作者矩阵</a>
+          <a href="#reviews">社区口碑</a>
+          <a href="#news">企业动态</a>
+          <a href="#submit">投稿入口</a>
+        </div>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <div class="foot-links">
+          <a href="#faq">常见问题</a>
+          <a href="#contact">联系我们</a>
+          <a href="#news">官方发布</a>
+          <a href="#top">品牌故事</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 精灵之森 SPIRIT FOREST · 版权所有 · 持续运营中</span>
+      <span>备案号：此处为占位信息　｜　内容授权与转载请联系官方</span>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<div class="modal-mask" id="modalMask">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="close" id="modalClose" aria-label="关闭">✕</button>
+    <h3 id="modalTitle">标题</h3>
+    <p id="modalDesc">描述</p>
+    <textarea id="modalText" placeholder="写下你的想法……"></textarea>
+    <div class="m-actions">
+      <button class="btn btn-ghost" id="modalCancel">取消</button>
+      <button class="btn btn-primary" id="modalOk">提交</button>
+    </div>
+  </div>
+</div>
+
+<button id="backTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var toast=document.getElementById('toast');
+  var toastTimer=null;
+  function showToast(msg){
+    toast.textContent=msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(function(){toast.classList.remove('show');},2200);
+  }
+
+  /* 移动端导航 */
+  var navToggle=document.getElementById('navToggle');
+  var mainNav=document.getElementById('mainNav');
+  navToggle.addEventListener('click',function(){
+    mainNav.classList.toggle('open');
+  });
+  mainNav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){mainNav.classList.remove('open');}
+  });
+
+  /* 搜索反馈 */
+  var searchInput=document.getElementById('searchInput');
+  var searchTip=document.getElementById('searchTip');
+  searchInput.addEventListener('input',function(){
+    var v=searchInput.value.trim();
+    if(!v){searchTip.classList.remove('show');return;}
+    searchTip.textContent='正在为你检索“'+v+'”相关的影像、专题与创作者……';
+    searchTip.classList.add('show');
+  });
+  searchInput.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){
+      var v=searchInput.value.trim();
+      if(!v){showToast('请输入搜索关键词');return;}
+      searchTip.textContent='已为你匹配“'+v+'”相关结果，可在影像库中进一步筛选。';
+      searchTip.classList.add('show');
+      showToast('搜索完成：'+v);
+    }
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.search-box')){searchTip.classList.remove('show');}
+  });
+
+  /* 标签筛选 */
+  var filterBar=document.getElementById('filterBar');
+  var videoGrid=document.getElementById('videoGrid');
+  filterBar.addEventListener('click',function(e){
+    var btn=e.target.closest('.chip');
+    if(!btn)return;
+    filterBar.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});
+    btn.classList.add('active');
+    var cat=btn.getAttribute('data-cat');
+    videoGrid.querySelectorAll('.vcard').forEach(function(card){
+      var ok=(cat==='all'||card.getAttribute('data-cat')===cat);
+      card.style.display=ok?'':'none';
+    });
+    showToast('已筛选：'+btn.textContent);
+  });
+
+  /* 点赞 / 收藏 */
+  videoGrid.addEventListener('click',function(e){
+    var like=e.target.closest('.like-btn');
+    if(like){
+      var liked=like.getAttribute('data-liked')==='true';
+      var numText=like.textContent.replace(/[^\d]/g,'');
+      var num=parseInt(numText,10)||0;
+      if(liked){
+        like.setAttribute('data-liked','false');
+        like.classList.remove('liked');
+        like.textContent='♡ '+(num-1);
+        showToast('已取消点赞');
+      }else{
+        like.setAttribute('data-liked','true');
+        like.classList.add('liked');
+        like.textContent='♥ '+(num+1);
+        showToast('点赞成功，感谢支持');
+      }
+      return;
+    }
+    var save=e.target.closest('.save-btn');
+    if(save){
+      var saved=save.getAttribute('data-saved')==='true';
+      if(saved){
+        save.setAttribute('data-saved','false');
+        save.classList.remove('saved');
+        save.textContent='☆ 收藏';
+        showToast('已取消收藏');
+      }else{
+        save.setAttribute('data-saved','true');
+        save.classList.add('saved');
+        save.textContent='★ 已收藏';
+        showToast('已加入你的收藏夹');
+      }
+    }
+  });
+
+  /* 作者信息弹窗 */
+  var modalMask=document.getElementById('modalMask');
+  var modalTitle=document.getElementById('modalTitle');
+  var modalDesc=document.getElementById('modalDesc');
+  var modalText=document.getElementById('modalText');
+  var modalOk=document.getElementById('modalOk');
+  var modalCancel=document.getElementById('modalCancel');
+  var modalClose=document.getElementById('modalClose');
+  var currentAction='submit';
+
+  function openModal(title,desc,placeholder,action){
+    modalTitle.textContent=title;
+    modalDesc.textContent=desc;
+    modalText.value='';
+    modalText.placeholder=placeholder||'写下你的想法……';
+    modalText.style.display=(action==='info')?'none':'block';
+    modalOk.textContent=(action==='info')?'知道了':'提交';
+    currentAction=action;
+    modalMask.classList.add('show');
+  }
+  function closeModal(){modalMask.classList.remove('show');}
+  modalClose.addEventListener('click',closeModal);
+  modalCancel.addEventListener('click',closeModal);
+  modalMask.addEventListener('click',function(e){if(e.target===modalMask)closeModal();});
+  modalOk.addEventListener('click',function(){
+    if(currentAction==='info'){closeModal();return;}
+    var val=modalText.value.trim();
+    if(!val){showToast('请先填写内容');return;}
+    closeModal();
+    showToast(currentAction==='report'?'反馈已收到，感谢你的建议':'投稿信息已提交，我们会尽快联系你');
+  });
+
+  document.querySelectorAll('.author-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      openModal(btn.getAttribute('data-name'),btn.getAttribute('data-info'),'', 'info');
+    });
+  });
+
+  /* 投稿按钮 */
+  function openSubmit(){
+    openModal('我要投稿','请简述你的作品主题、时长与拍摄地点，编辑会在 5 个工作日内回复。','例如：3 分钟森林观察短片，拍摄于北岭林区……','submit');
+  }
+  document.getElementById('submitBtn').addEventListener('click',openSubmit);
+  document.getElementById('submitBtn2').addEventListener('click',openSubmit);
+
+  /* 反馈 */
+  document.getElementById('reportBtn').addEventListener('click',function(){
+    openModal('反馈与建议','告诉我们你希望改进的地方，或希望看到的内容方向。','写下你的意见……','report');
+  });
+
+  /* 复制链接 */
+  document.getElementById('copyLinkBtn').addEventListener('click',function(){
+    var link=window.location.href;
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(link).then(function(){
+        showToast('链接已复制，欢迎分享给同好');
+      }).catch(function(){
+        showToast('复制失败，请手动复制地址栏链接');
+      });
+    }else{
+      var ta=document.createElement('textarea');
+      ta.value=link;document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy');showToast('链接已复制，欢迎分享给同好');}
+      catch(err){showToast('复制失败，请手动复制地址栏链接');}
+      document.body.removeChild(ta);
+    }
+  });
+
+  /* 回到顶部 */
+  var backTop=document.getElementById('backTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>500){backTop.classList.add('show');}
+    else{backTop.classList.remove('show');}
+  });
+  backTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+})();
+</script>
+</body>
+                </html>
